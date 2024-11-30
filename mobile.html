@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center;
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; 
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; 
+    transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; 
+    color: black; 
+}
+
+.home-icon {
+    font-size: 25px; 
+    margin-right: 88px; 
+}
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #ffe4cd;
+    }
+        footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+
+      </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+            <li><a href="ux.html">UX/UI Designer</a></li>
+            <li><a href="pr.html">Product Manager</a></li>
+            <li><a href="de.html">Developer</a></li>
+            <li><a href="data.html">Data Scientist</a></li>
+            <li><a href="da.html">Data Analyst</a></li>
+            <li><a href="so.html">Software Developer</a></li>
+            <li><a href="mobile.html">Mobile App Developer</a></li>
+            <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Mobile App Developer</h2>
+        
+    </center>  
+        <hr>
+        <br>
+        <h3>What Is a Mobile App Developer?</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Mobile application development is a growing field for both independent and corporate developers. If you're interested in a career as a software developer, you may consider working in application development. Learning about what an app developer does and other key considerations for the job can help you determine if it's an appealing career opportunity for you. In this article, we discuss what a mobile app developer is, what they do, requirements to work in the field and the salary expectations and industry outlook for mobile app developers.</p>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;A mobile app developer is a software professional who creates applications for smartphones and other mobile devices. This may include creating mobile versions of web or computer-based applications. It may also involve generating applications designed specifically as mobile-exclusive software. Mobile app developers may work for a software development firm or independently through contract work.</p>
+        <br>
+        <center>
+            <img src="data:image/jpeg;base64,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">
+        </center>
+        <br>
+        <h3>What does a mobile app developer do?</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;When working as a mobile app developer, your responsibilities may vary based on the role you have within the team. Common duties for a mobile app developer include,Meeting with senior employees of an employer or with representatives of a client, to discuss the application and their desired features, schedule and budget
+            Taking part in brainstorming sessions to discuss potential ideas to include in an application's design
+            Creating a project plan for the coding, testing and release of the application
+            Writing code for an application
+            Debugging code to identify the cause of errors when executing a program and fixing them
+            Developing and releasing patches to an application to correct errors
+            Updating applications with new features and modes to provide enhanced value to users</p>
+        <br>
+        <h3>Importance of Mobile App Developers</h3>
+<br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Mobile app developers play a crucial role in today's digital economy by creating applications that enhance user experiences, drive innovation, and support business growth. Key reasons why mobile app developers are important include:</p>
+
+    <ol>
+    <li><strong>User Engagement:</strong> Mobile apps enable businesses to engage directly with their customers, providing personalized experiences and services accessible anytime, anywhere.</li>
+    <br>
+    <li><strong>Market Reach:</strong> Mobile apps expand market reach by reaching a global audience through app stores, increasing brand visibility and customer acquisition.</li>
+    <br>
+    <li><strong>Revenue Generation:</strong> Apps can generate revenue through various monetization strategies such as in-app purchases, subscriptions, advertisements, and premium features.</li>
+    <br>
+    <li><strong>Enhanced Customer Experience:</strong> Well-designed apps improve customer satisfaction by offering intuitive interfaces, fast loading times, and seamless functionalities.</li>
+    <br>
+    <li><strong>Business Efficiency:</strong> Apps streamline business operations by automating processes, facilitating transactions, and providing real-time data analytics for informed decision-making.</li>
+    <br>
+</ol>
+<br>
+<h3>Differences Between Mobile App Developer and Software Developer</h3>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Aspect</th>
+            <th>Mobile App Developer</th>
+            <th>Software Developer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Focus</strong></td>
+            <td>Specializes in developing applications for mobile devices (iOS, Android, etc.)</td>
+            <td>Can work on a variety of applications including desktop, web, and mobile platforms.</td>
+        </tr>
+        <tr>
+            <td><strong>Development Environment</strong></td>
+            <td>Uses mobile-specific development tools and frameworks (e.g., Swift, Kotlin, React Native).</td>
+            <td>Uses a broader range of tools and frameworks depending on the platform (e.g., Java, Python, JavaScript).</td>
+        </tr>
+        <tr>
+            <td><strong>User Interface (UI)</strong></td>
+            <td>Focuses on creating intuitive and responsive mobile UI/UX designs.</td>
+            <td>May work on UI/UX design across different platforms (web, mobile, desktop).</td>
+        </tr>
+        <tr>
+            <td><strong>Device-Specific Features</strong></td>
+            <td>Integrates device-specific features like GPS, camera, and touch gestures into mobile apps.</td>
+            <td>May develop applications that require integration with various hardware components and platforms.</td>
+        </tr>
+        <tr>
+            <td><strong>Platform</strong></td>
+            <td>Develops apps primarily for mobile operating systems (iOS, Android).</td>
+            <td>Can develop for multiple platforms including desktop, web, and mobile.</td>
+        </tr>
+        <tr>
+            <td><strong>Testing and Deployment</strong></td>
+            <td>Focuses on testing mobile apps across different devices and OS versions.</td>
+            <td>Tests and deploys applications across a variety of platforms and environments.</td>
+        </tr>
+        
+    </tbody>
+</table>
+<br>
+<h3>Roles and Responsibilities of a Software Developer</h3>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers play a crucial role in designing, developing, and maintaining software applications. Their responsibilities typically include:</p>
+<br>
+<b>Software Development</b>
+<ol>
+    <li>Writing clean, scalable code using programming languages such as Java, Python, JavaScript, etc.</li>
+    <li>Developing software solutions based on technical specifications and requirements.</li>
+    <li>Testing and debugging applications to ensure functionality and identify defects.</li>
+    <li>Integrating software components and third-party programs.</li>
+</ol>
+
+<b>Collaboration and Teamwork</b>
+<ol>
+    <li>Working closely with other developers, designers, and project managers in a collaborative environment.</li>
+    <li>Participating in code reviews to ensure code quality and adherence to coding standards.</li>
+    <li>Contributing to team discussions and decision-making processes.</li>
+</ol>
+
+<b>Problem-Solving and Troubleshooting</b>
+<ol>
+    <li>Analyzing and resolving technical issues in software applications.</li>
+    <li>Implementing solutions to improve application performance and usability.</li>
+    <li>Responding to user feedback and addressing customer support inquiries related to software functionality.</li>
+</ol>
+
+<b>Documentation and Maintenance</b>
+<ol>
+    <li>Documenting software functionalities, technical specifications, and development processes.</li>
+    <li>Maintaining and upgrading existing software applications to meet evolving user needs and technology trends.</li>
+    <li>Ensuring software security and data protection measures are implemented.</li>
+</ol>
+<br>
+<h3>Salary Packages for Mobile App Developers</h3>
+<br>
+<b>Entry-level Positions:</b>
+<ol>
+    <li>Annual salary typically ranges from $50,000 to $70,000.</li>
+    <li>Salary may vary based on location and company size.</li>
+</ol>
+<b>Mid-level Positions:</b>
+<ol>
+   
+    <li>Annual salary generally ranges from $70,000 to $100,000.</li>
+    <li> Often includes bonuses and benefits as part of the compensation package.</li>
+</ol>
+<b>Senior-level Positions:
+</b>
+<ol>
+    
+    <li>Annual salary can range from $100,000 to $150,000 or more.</li>
+    <li></li>Includes significant bonuses, stock options, and other perks.</li>
+</ol>
+<br>
+<h3>Skills Required for Mobile App Developers</h3>
+<br>
+<b>Programming Languages:</b>
+<ol>
+    <li>Proficiency in languages such as Java, Kotlin (for Android) or Swift (for iOS).</li>
+    <li> Familiarity with languages like JavaScript, TypeScript for cross-platform development.</li>
+</ol>
+<b>Mobile Development Frameworks:</b>
+<ol>
+    <li>Experience with frameworks like Android SDK, Flutter, React Native, or Xamarin.</li>
+</ol>
+<b>Database Management:</b>
+<ol>
+    <li>Knowledge of databases such as SQLite, Realm, Firebase Firestore.</li>
+    <li>Understanding of database design principles and data synchronization.
+        </li>
+</ol>
+<b>Version Control and Collaboration:</b>
+<li>Proficiency in version control systems like Git for managing codebase.</li>
+<li>Experience in collaborative tools such as JIRA, Trello, or Slack for team communication.
+    </li>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Becoming a proficient mobile app developer requires a diverse skill set encompassing both technical expertise and collaborative abilities. From mastering programming languages and development frameworks to understanding database management and UI/UX design principles, a well-rounded skill set is crucial. Additionally, proficiency in version control systems and collaboration tools enhances productivity and teamwork within development projects.</p>
+ </article>
+
+ <aside>
+            
+  <h2>Table Of Contents</h2>
+  <hr>
+  <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+<!--
+  <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+-->
+  <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+  <p><a href="29hw.html">Demands in the Software Industry</a></p>
+  <p><a href="29hw.html">Key Skills for Success</a></p>
+  <p><a href="29hw.html">Salary Packages</a></p>
+  <p><a href="29hw.html">Career Paths</a></p>
+  <p><a href="29hw.html">Education and Training</a></p>
+  <p><a href="29hw.html">Resources for Learning</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+  <p><a href="ux.html">What Is UI Design</a></p>
+  <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+  <p><a href="ux.html">Look vs. Feel</a></p>
+  <p><a href="ux.html">Design vs. Prototyping</a></p>
+  <p><a href="ux.html">High-Level vs. Details</a></p>
+  <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+  <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+  <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+  <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+  <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+  <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+  <p><a href="ux.html">Conclusion Ux designer</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="pr.html">Importance of Product Managers</a></p>
+  <p><a href="pr.html">Difference from Other Roles</a></p>
+  <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+  <p><a href="pr.html">Demands of product manager</a></p>
+  <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+  <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="de.html">Importance of Developers</a></p>
+  <p><a href="de.html">Difference of developer</a></p>
+  <p><a href="de.html">Roles and Responsibilities</a></p>
+  <p><a href="de.html">Demands of Developer</a></p>
+  <p><a href="de.html">Salary Packages of Developer</a></p>
+  <p><a href="de.html">Additional Considerations:</a></p>
+  <p><a href="de.html">Skills of Developer</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="data.html">What is data science?</a></p>
+  <p><a href="data.html">Why is data science important?</a></p>
+  <p><a href="data.html">History of data science</a></p>
+  <p><a href="data.html">Future of data science</a></p>
+  <p><a href="data.html">What does a data scientist do?</a></p>
+  <p><a href="data.html">Difference of data scientist</a></p>
+  <p><a href="data.html">Demands of Data Scientist</a></p>
+  <p><a href="data.html">Explosion of Data</a></p>
+  <p><a href="data.html">
+    Businesses Embracing Data-Driven Decision Making</a></p>
+  <p><a href="data.html">
+    Advancements in AI and Machine Learning</a></p>
+  <p><a href="data.html">
+    Emergence of Big Data Technologies</a></p>
+  <p><a href="data.html">Impact of Data Science on Innovation</a>
+ 
+  <p><a href="data.html">salary Packages of data scientist</a></p>
+  <p><a href="data.html">Skills of Data Scientist</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+  <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+  <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+  <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+  <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+ 
+  <p><a href="da.html">What is a Data Analyst?</a></p>
+  <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+  <p><a href="da.html">Who can become a Data Analyst?</a></p>
+  <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+  <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+  </p>
+
+  <p><a href="da.html">Data Analyst Salary Packages</a></p>
+  <p><a href="da.html">Skills Required for Data Analysts</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="so.html">What Is a Software Developer?
+  </a></p>
+  <p><a href="so.html">What does a software developer do?</a></p>
+  <p><a href="so.html">Importance of Software Developers</a></p>
+  <p><a href="so.html">Differences Between Software Developer and Software Engineer
+  </a></p><br>
+  <p><a href="so.html">Roles and Responsibilities of a Software Developer
+  </a></p>
+  <p><a href="so.html">Demand for Software Developers</a></p>
+  <p><a href="so.html">Salary Packages for Software Developers</a></p>
+  <p><a href="so.html">Skills Required for Software Developers</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+  <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+  <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+  <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+  <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+  <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+  <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+  <br>
+ <!---
+  <hr>
+  <br>
+  <p><a href="test.html">What is Testing?</a></p>
+  <p><a href="test.html">Why is Testing Important?</a></p>
+  <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+  <p><a href="test.html">Salary Packages for Testers</a></p>
+  <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+  <p><a href="test.html">Skills Required for Tester</a></p>-->
+  
+</aside>
+
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

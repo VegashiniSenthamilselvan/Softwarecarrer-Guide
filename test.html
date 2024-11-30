@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center;
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; 
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; 
+    transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; 
+    color: black; 
+}
+
+.home-icon {
+    font-size: 25px; 
+    margin-right: 88px; 
+}
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #ffe4cd;
+    }
+        footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+
+      </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+                <li><a href="ux.html">UX/UI Designer</a></li>
+                <li><a href="pr.html">Product Manager</a></li>
+                <li><a href="de.html">Developer</a></li>
+                <li><a href="#data-scientist">Data Scientist</a></li>
+                <li><a href="#data-analyst">Data Analyst</a></li>
+                <li><a href="#software-developer">Software Developer</a></li>
+                <li><a href="#mobile-app-developer">Mobile App Developer</a></li>
+                <li><a href="#tester">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Tester</h2>
+        
+    </center>  
+        <hr>
+        <br>
+        <h3>What is Testing?</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Software testing is a systematic process of evaluating software to identify and fix defects before it is released to users. It involves executing a program or application with the intent of finding bugs, errors, or other issues that may affect its functionality or performance.</p>
+        <br>
+        <center>
+            <img src=" https://www.guru99.com/images/stories/SoftwareTestingSkills.png  ">
+        </center>
+        <br>
+        <h3>Why is  Testing Important?</h3>
+        <br>
+        <ol>
+            <li><b>Quality Assurance:</b>&nbsp;Testing ensures that software meets quality standards and functional requirements. It helps identify and resolve issues early in the development process, reducing the risk of defects reaching users.</li><br>
+            <li><b>Bug Identification:</b>&nbsp;Testing helps uncover bugs and errors that can impact user experience or cause system failures. Fixing these issues before deployment saves time and resources in the long run.</li><br>
+            <li><b>Enhanced User Satisfaction:</b>&nbsp;By identifying and fixing bugs, testing contributes to a smoother user experience. Users encounter fewer issues, leading to higher satisfaction and improved reputation for the software.
+            </li><br>
+            <li><b>Risk Mitigation: </b>&nbsp;Testing helps mitigate risks associated with software failures, security vulnerabilities, or compliance issues. It ensures that software performs as expected in various environments and conditions.</li><br>
+            <li><b>Cost Savings: </b>&nbsp;Addressing defects early in the development cycle is more cost-effective than fixing issues after deployment. Testing helps minimize rework and maintenance costs associated with post-release bug fixes.
+            </li><br>
+            <li><b>Compliance and Standards: </b>&nbsp;For industries with regulatory requirements or standards (such as healthcare, finance, or aerospace), testing ensures software compliance and adherence to industry-specific guidelines.</li>
+            <br>
+        </ol>  
+        <br>
+       <h3>Roles and Responsibilities of a Software Tester</h3>
+       <br>
+       <ol>
+        <li><b>Test Planning and Documentation:</b>&nbsp;Developing test plans, test cases, and test scripts based on project requirements.Documenting test results and defects for analysis and reporting.</li>
+        <br>
+        <li><b>Test Execution and Analysis:</b>&nbsp;Executing test cases and scripts to verify software functionality and performance.
+        Identifying, analyzing, and documenting defects or issues encountered during testing.</li>
+        <br>
+        <li><b> Collaboration and Communication:</b>&nbsp;Working closely with developers, designers, and stakeholders to understand project requirements.Communicating test progress, results, and potential risks to project teams.</li>
+        <br>
+        <li><b>Test Automation:</b>&nbsp;Developing and maintaining automated test scripts using tools like Selenium or Appium.Executing automated tests to increase test coverage and efficiency.
+        </li>
+        <br>
+        <li><b> Continuous Improvement:</b>&nbsp;Contributing to process improvements and best practices within the testing team.Staying updated with industry trends, tools, and techniques to enhance testing practices.</li>
+        <br>
+        
+        <h3>Salary Packages for Testers</h3>
+        <br>
+        <ol>
+            <li><b>Entry-level Positions:</b></li><br>
+            <ol>
+            <li><b>Salary Range:</b> $40,000 - $60,000 annually</li><br>
+            <li><b>Description: </b>Entry-level tester roles are typically for individuals with little to no prior professional experience in software testing. Responsibilities may include executing test cases, identifying and reporting bugs, and learning testing methodologies and tools under supervision.</li>
+            <br>
+            <li><b>Additional Notes:</b> Salaries may vary based on location, industry, and company size. Entry-level testers often receive on-the-job training and opportunities for career advancement.</li>
+            <br>
+        </ol>
+        <li><b>Mid-level Positions:</b></li><br>
+        <ol>
+            <li><b>Salary Range: </b>$60,000 - $80,000 annually</li><br>
+           <li><b>Description: </b>Mid-level tester roles are suitable for professionals with 2-5 years of experience in software testing. Responsibilities expand to include designing test plans, executing complex test scenarios, performing regression testing, and collaborating closely with developers and stakeholders to ensure software quality.</li> 
+           <br> 
+           <li><b>Additional Notes:</b> Mid-level testers may have specialized skills in automation testing, performance testing, or specific domains like web applications, mobile apps, or enterprise software.</li>
+           <br>
+        </ol>
+        <li><b>Senior-level Positions:</b></li><br>
+        <ol>
+           <li><b>Salary Range:</b> $80,000 - $100,000+ annually</li><br>
+           <li><b>Description: </b>Senior-level tester roles require extensive experience, typically 5+ years in software testing. Responsibilities include leading testing efforts, defining test strategies, mentoring junior testers, conducting quality assurance reviews, and implementing best practices in testing methodologies and tools.</li>
+           <br>
+           <li><b>Additional Notes:</b> Compensation for senior testers may include bonuses, profit-sharing, or stock options. Senior testers often contribute to improving overall software development processes and play a critical role in ensuring product reliability and customer satisfaction.</li>
+           <br>
+        </ol>
+        </ol>
+        <br>
+        <h3>Comparison: Tester vs Developer</h3>
+        <br>
+        <table>
+            <tr>
+                <th>Aspect</th>
+                <th>Tester</th>
+                <th>Developer</th>
+            </tr>
+            <tr>
+                <td class="highlight">Primary Role</td>
+                <td>Identify and prevent software defects through testing.</td>
+                <td>Design, develop, and maintain software applications.</td>
+            </tr>
+            <tr>
+                <td class="highlight">Focus</td>
+                <td>Ensures software quality by finding and fixing bugs.</td>
+                <td>Creates functional software that meets project requirements.</td>
+            </tr>
+            <tr>
+                <td class="highlight">Skills</td>
+                <td>Testing methodologies, test automation, bug tracking tools.</td>
+                <td>Programming languages, frameworks, software design patterns.</td>
+            </tr>
+            <tr>
+                <td class="highlight">Responsibilities</td>
+                <td>Execute test cases, report bugs, ensure product reliability.</td>
+                <td>Write code, debug applications, optimize performance.</td>
+            </tr>
+            <tr>
+                <td class="highlight">Collaboration</td>
+                <td>Works closely with developers, QA team, and project stakeholders.</td>
+                <td>Collaborates with designers, testers, and project managers.</td>
+            </tr>
+            <tr>
+                <td class="highlight">Goal</td>
+                <td>Ensure software meets quality standards and user requirements.</td>
+                <td>Deliver functional and efficient software solutions.</td>
+            </tr>
+        </table>
+        <br>
+        <h3>Skills Required for Tester</h3>
+        <br>
+        <b>HTML Testing Skills</b><br>
+            <ol>
+                <br>
+                <li>Understanding of HTML tags and attributes</li><br>
+                <li>Cross-browser testing</li><br>
+                <li>Accessibility testing (WCAG guidelines)</li><br>
+                <li>Responsive design testing</li><br>
+                <li>HTML validation (W3C standards)</li><br>
+            </ol>
+       
+            <b>Technical Skills</b><br>
+
+            <ol>
+                <br>
+                <li>Debugging with browser developer tools</li><br>
+                <li>Basic knowledge of version control systems (e.g., Git)</li><br>
+                <li>Test automation tools and frameworks</li><br>
+                <li>Security testing awareness</li><br>
+                <li>Performance testing</li><br>
+            </ol>
+        
+            <b>Soft Skills</b><br>
+            <ol>
+                <br>
+                <li>Effective communication</li><br>
+                <li>Collaboration with developers and designers</li><br>
+                <li>Attention to detail</li><br>
+                <li>Problem-solving skills</li><br>
+                <li>Adaptability and learning mindset</li><br>
+            </ol>
+       </ol>
+       
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;Being a tester is more than just finding bugs; it's about ensuring the quality and reliability of software applications, particularly in web development. Testers need a deep understanding of HTML and its intricacies to verify that web pages function correctly across different browsers and devices.
+       Technical skills are crucial for testers. They should be proficient in using developer tools to debug and analyze HTML, CSS, and JavaScript issues. Knowledge of version control systems like Git helps manage changes efficiently, ensuring collaboration with developers is seamless.
+       Accessibility and usability testing are essential aspects of a tester's role. </p>
+       <br>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;They must ensure that web pages are accessible to all users, following WCAG guidelines, and provide a smooth, intuitive user experience.
+       Test automation is becoming increasingly important in testing workflows. Testers should be familiar with automation tools and frameworks to execute repetitive tests efficiently, allowing them to focus on more complex scenarios and exploratory testing.
+       Soft skills are equally vital. Effective communication helps testers collaborate effectively with developers, designers, and stakeholders, ensuring everyone is aligned on quality expectations and issues. Adaptability and problem-solving skills are critical in navigating the dynamic and evolving landscape of web technologies.
+       In conclusion, testers play a pivotal role in delivering high-quality web applications. Their blend of technical proficiency, attention to detail, and collaborative spirit ensures that software meets user expectations for functionality, accessibility, and performance. By continuously learning and adapting, testers contribute significantly to the success and improvement of digital experiences.</p>
+    </article>
+
+    <aside>
+            
+      <h2>Table Of Contents</h2>
+      <hr>
+      <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+   <!--
+      <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+  -->
+      <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+      <p><a href="29hw.html">Demands in the Software Industry</a></p>
+      <p><a href="29hw.html">Key Skills for Success</a></p>
+      <p><a href="29hw.html">Salary Packages</a></p>
+      <p><a href="29hw.html">Career Paths</a></p>
+      <p><a href="29hw.html">Education and Training</a></p>
+      <p><a href="29hw.html">Resources for Learning</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+      <p><a href="ux.html">What Is UI Design</a></p>
+      <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+      <p><a href="ux.html">Look vs. Feel</a></p>
+      <p><a href="ux.html">Design vs. Prototyping</a></p>
+      <p><a href="ux.html">High-Level vs. Details</a></p>
+      <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+      <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+      <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+      <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+      <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+      <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+      <p><a href="ux.html">Conclusion Ux designer</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="pr.html">Importance of Product Managers</a></p>
+      <p><a href="pr.html">Difference from Other Roles</a></p>
+      <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+      <p><a href="pr.html">Demands of product manager</a></p>
+      <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+      <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="de.html">Importance of Developers</a></p>
+      <p><a href="de.html">Difference of developer</a></p>
+      <p><a href="de.html">Roles and Responsibilities</a></p>
+      <p><a href="de.html">Demands of Developer</a></p>
+      <p><a href="de.html">Salary Packages of Developer</a></p>
+      <p><a href="de.html">Additional Considerations:</a></p>
+      <p><a href="de.html">Skills of Developer</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="data.html">What is data science?</a></p>
+      <p><a href="data.html">Why is data science important?</a></p>
+      <p><a href="data.html">History of data science</a></p>
+      <p><a href="data.html">Future of data science</a></p>
+      <p><a href="data.html">What does a data scientist do?</a></p>
+      <p><a href="data.html">Difference of data scientist</a></p>
+      <p><a href="data.html">Demands of Data Scientist</a></p>
+      <p><a href="data.html">Explosion of Data</a></p>
+      <p><a href="data.html">
+        Businesses Embracing Data-Driven Decision Making</a></p>
+      <p><a href="data.html">
+        Advancements in AI and Machine Learning</a></p>
+      <p><a href="data.html">
+        Emergence of Big Data Technologies</a></p>
+      <p><a href="data.html">Impact of Data Science on Innovation</a>
+     
+      <p><a href="data.html">salary Packages of data scientist</a></p>
+      <p><a href="data.html">Skills of Data Scientist</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+      <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+      <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+      <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+      <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+     
+      <p><a href="da.html">What is a Data Analyst?</a></p>
+      <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+      <p><a href="da.html">Who can become a Data Analyst?</a></p>
+      <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+      <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+      </p>
+    
+      <p><a href="da.html">Data Analyst Salary Packages</a></p>
+      <p><a href="da.html">Skills Required for Data Analysts</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="so.html">What Is a Software Developer?
+      </a></p>
+      <p><a href="so.html">What does a software developer do?</a></p>
+      <p><a href="so.html">Importance of Software Developers</a></p>
+      <p><a href="so.html">Differences Between Software Developer and Software Engineer
+      </a></p><br>
+      <p><a href="so.html">Roles and Responsibilities of a Software Developer
+      </a></p>
+      <p><a href="so.html">Demand for Software Developers</a></p>
+      <p><a href="so.html">Salary Packages for Software Developers</a></p>
+      <p><a href="so.html">Skills Required for Software Developers</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+      <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+      <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+      <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+      <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+      <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+      <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="test.html">What is Testing?</a></p>
+      <p><a href="test.html">Why is Testing Important?</a></p>
+      <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+      <p><a href="test.html">Salary Packages for Testers</a></p>
+      <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+      <p><a href="test.html">Skills Required for Tester</a></p>
+      
+  </aside>
+
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

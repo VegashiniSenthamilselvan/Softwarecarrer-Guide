@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center;
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; 
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; 
+    transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; 
+    color: black; 
+}
+
+.home-icon {
+    font-size: 25px; 
+    margin-right: 88px; 
+}
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #ffe4cd;
+    }
+        footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+
+      </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+            <li><a href="ux.html">UX/UI Designer</a></li>
+            <li><a href="pr.html">Product Manager</a></li>
+            <li><a href="de.html">Developer</a></li>
+            <li><a href="data.html">Data Scientist</a></li>
+            <li><a href="da.html">Data Analyst</a></li>
+            <li><a href="so.html">Software Developer</a></li>
+            <li><a href="mobile.html">Mobile App Developer</a></li>
+            <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Data Scientist</h2>
+        
+    </center>  
+        <hr>
+        <br>
+        <h3>What is data science?</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Data science is the study of data to extract meaningful insights for business. It is a multidisciplinary approach that combines principles and practices from the fields of mathematics, statistics, artificial intelligence, and computer engineering to analyze large amounts of data. This analysis helps data scientists to ask and answer questions like what happened, why it happened, what will happen, and what can be done with the results.</p>
+        <br>
+        <h3>Why is data science important?</h3>
+        <br>
+        <center>
+            <img src="data:image/jpeg;base64,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">
+        </center>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Data science is important because it combines tools, methods, and technology to generate meaning from data. Modern organizations are inundated with data; there is a proliferation of devices that can automatically collect and store information. Online systems and payment portals capture more data in the fields of e-commerce, medicine, finance, and every other aspect of human life. We have text, audio, video, and image data available in vast quantities.  </p>
+        <br>
+        
+        <h3>History of data science</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;While the term data science is not new, the meanings and connotations have changed over time. The word first appeared in the ’60s as an alternative name for statistics. In the late ’90s, computer science professionals formalized the term. A proposed definition for data science saw it as a separate field with three aspects: data design, collection, and analysis. It still took another decade for the term to be used outside of academia. </p>
+          <br>
+          <h3>
+            Future of data science
+          </h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Artificial intelligence and machine learning innovations have made data processing faster and more efficient. Industry demand has created an ecosystem of courses, degrees, and job positions within the field of data science. Because of the cross-functional skillset and expertise required, data science shows strong projected growth over the coming decades.</p>          
+          <br>
+          <h3>What does a data scientist do?</h3>
+          <br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;A data scientist can use a range of different techniques, tools, and technologies as part of the data science process. Based on the problem, they pick the best combinations for faster and more accurate results.</p><br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;A data scientist’s role and day-to-day work vary depending on the size and requirements of the organization. While they typically follow the data science process, the details may vary. In larger data science teams, a data scientist may work with other analysts, engineers, machine learning experts, and statisticians to ensure the data science process is followed end-to-end and business goals are achieved. </p><br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;However, in smaller teams, a data scientist may wear several hats. Based on experience, skills, and educational background, they may perform multiple roles or overlapping roles. In this case, their daily responsibilities might include engineering, analysis, and machine learning along with core data science methodologies. </p>
+          <br>
+          <h3>Difference of data scientist</h3>
+          <br>
+          <table>
+            <tr>
+                <th>Aspect</th>
+                <th>Data Scientist</th>
+                <th>Developer</th>
+            </tr>
+            <tr>
+                <td><strong>Roles & Responsibilities</strong></td>
+                <td>- Analyzing large datasets<br>- Building predictive models<br>- Extracting insights<br>- Communicating findings</td>
+                <td>- Writing code<br>- Developing applications<br>- Testing software<br>- Collaborating with teams</td>
+            </tr>
+            <tr>
+                <td><strong>Demands</strong></td>
+                <td>High demand due to increasing data availability and need for insights</td>
+                <td>High demand across various industries for software solutions</td>
+            </tr>
+            <tr>
+                <td><strong>Salary Packages</strong></td>
+                <td>Typically high; can range widely based on experience and location</td>
+                <td>Competitive; varies with specialization and industry</td>
+            </tr>
+            <tr>
+                <td><strong>Skills Needed</strong></td>
+                <td>- Data analysis<br>- Machine learning algorithms<br>- Statistical modeling<br>- Programming (Python, R, etc.)</td>
+                <td>- Proficiency in programming languages (Java, Python, etc.)<br>- Problem-solving skills<br>- Version control systems</td>
+            </tr>
+        </table>
+        <br>
+        <h3>Roles & Responsibilities</h3>
+        <br>
+        <p>Data scientists are primarily responsible for:</p>
+            <ol>
+                <li>Collecting, cleaning, and transforming large volumes of complex data.</li>
+                <li>Applying statistical analysis and machine learning techniques to extract meaningful insights.</li>
+                <li>Building and optimizing predictive models to solve specific business problems.</li>
+                <li>Communicating findings to non-technical stakeholders through visualizations and reports.</li>
+                <li>Collaborating with cross-functional teams including engineers, product managers, and business analysts.</li>
+            </ol>
+            <br>
+            <p>Developers typically have the following roles and responsibilities:</p>
+            <ol>
+                <li>Writing clean, scalable code for software applications based on technical specifications.</li>
+                <li>Designing user interfaces and user experiences for web and mobile applications.</li>
+                <li>Testing and debugging software to ensure functionality and optimization.</li>
+                <li>Implementing security and data protection measures.</li>
+                <li>Collaborating with team members to plan and execute projects using Agile or other development methodologies.</li>
+            </ol>
+            <br>
+            <h3>Demands of Data Scientist</h3>
+            <br>
+            <ol>
+                <li><b>Explosion of Data:</b>&nbsp;With the proliferation of digital technologies, businesses are generating vast amounts of data every day. Data scientists are crucial for extracting valuable insights from this data to drive decision-making and strategy.</li><br>
+                <li><b>Businesses Embracing Data-Driven Decision Making: </b>&nbsp;Companies across industries are increasingly adopting data-driven approaches to gain a competitive edge. This shift has led to a greater need for skilled professionals who can interpret data and provide actionable insights.
+
+                </li><br>
+                <li><b>Advancements in AI and Machine Learning: </b>&nbsp;The evolution of artificial intelligence (AI) and machine learning (ML) has opened up new possibilities in data analysis and predictive modeling. Data scientists proficient in these technologies are in high demand to develop and implement AI-driven solutions.</li><br>
+                <li><b>Emergence of Big Data Technologies:</b>&nbsp;The rise of big data technologies such as Hadoop, Spark, and NoSQL databases has enabled organizations to process and analyze large datasets more efficiently. Data scientists proficient in these technologies are highly sought after.</li><br>
+                <li><b>Impact of Data Science on Innovation:</b>&nbsp;Data science is driving innovation in product development, customer experience enhancement, operational efficiency, and more. As companies strive to innovate and stay competitive, the demand for skilled data scientists continues to rise.
+
+                </li><br>
+                
+            </ol>
+            <h3>salary Packages of data scientist</h3>
+            <br>
+            <p>Data scientists are highly valued for their expertise in analyzing complex data and extracting insights that drive decision-making and innovation. The salary packages for data scientists vary based on several factors:</p>
+            <br>
+            <ol>
+                <li><strong>Experience Level:</strong> Entry-level data scientists (0-2 years of experience) can typically expect to earn between $70,000 to $100,000 annually. As they gain more experience and skills, mid-level data scientists (3-5 years) can earn from $100,000 to $130,000. Senior data scientists with 6 or more years of experience often command salaries ranging from $130,000 to over $160,000 per year.</li><br>
+                
+                <li><strong>Education and Skills:</strong> Data scientists with advanced degrees such as PhDs generally command higher salaries compared to those with Bachelor's or Master's degrees. Specialized skills in areas like machine learning, artificial intelligence, and big data analytics also contribute to higher earning potential.</li>
+                <br>
+                <li><strong>Industry:</strong> Salaries can vary significantly across industries. For example, data scientists working in finance, healthcare, and tech companies often earn higher salaries due to the complexity and volume of data involved in these sectors.</li>
+                <br>
+                <li><strong>Location:</strong> Geographic location plays a crucial role in determining salary levels. Data scientists working in major tech hubs or cities with high living costs may receive higher compensation to offset expenses.</li>
+                <br>
+                <li><strong>Additional Factors:</strong> Companies may offer additional perks such as bonuses, stock options, and other incentives to attract and retain top talent in the competitive field of data science.</li>
+            </ol>
+            <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Overall, data scientists are in high demand across various industries as organizations continue to harness the power of data-driven insights. This demand, coupled with the specialized skills required, contributes to competitive salary packages and promising career prospects in the field of data science.</p>
+            <br>
+            <h3>Skills of Data Scientist</h3>
+            <br>
+            <p>Data scientists need a diverse set of skills to effectively analyze data, extract insights, and communicate findings. Key skills include:</p>
+            <br>
+            <ol>
+                <li><strong>Programming Languages:</strong> Proficiency in Python and R for data manipulation, statistical analysis, and machine learning.</li>
+                <br>
+                <li><strong>Statistical Analysis:</strong> Strong understanding of statistical concepts like hypothesis testing, regression analysis, and probability distributions.</li>
+                <br>
+                <li><strong>Machine Learning:</strong> Knowledge of machine learning algorithms and techniques for predictive modeling, clustering, and classification.</li>
+                <br>
+                <li><strong>Data Wrangling and Cleaning:</strong> Ability to preprocess and clean data, handle missing values, outliers, and ensure data quality.</li>
+                <br>
+                <li><strong>Data Visualization:</strong> Experience with tools like Matplotlib, Seaborn, or Tableau to create visualizations that effectively communicate insights.</li>
+                <br>
+                <li><strong>Big Data Tools:</strong> Familiarity with tools such as Hadoop, Spark, and SQL databases for working with large datasets and distributed computing.</li>
+                <br>
+                <li><strong>Domain Knowledge:</strong> Understanding of specific industries (e.g., finance, healthcare) to contextualize data analysis and derive meaningful insights.</li>
+            </ol>
+            <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;These skills collectively empower data scientists to extract valuable insights from data, contribute to decision-making processes, and drive innovation within organizations.</p>            
+        </article>
+
+        <aside>
+            
+          <h2>Table Of Contents</h2>
+          <hr>
+          <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+       <!--
+          <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+      -->
+          <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+          <p><a href="29hw.html">Demands in the Software Industry</a></p>
+          <p><a href="29hw.html">Key Skills for Success</a></p>
+          <p><a href="29hw.html">Salary Packages</a></p>
+          <p><a href="29hw.html">Career Paths</a></p>
+          <p><a href="29hw.html">Education and Training</a></p>
+          <p><a href="29hw.html">Resources for Learning</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+          <p><a href="ux.html">What Is UI Design</a></p>
+          <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+          <p><a href="ux.html">Look vs. Feel</a></p>
+          <p><a href="ux.html">Design vs. Prototyping</a></p>
+          <p><a href="ux.html">High-Level vs. Details</a></p>
+          <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+          <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+          <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+          <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+          <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+          <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+          <p><a href="ux.html">Conclusion Ux designer</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="pr.html">Importance of Product Managers</a></p>
+          <p><a href="pr.html">Difference from Other Roles</a></p>
+          <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+          <p><a href="pr.html">Demands of product manager</a></p>
+          <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+          <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="de.html">Importance of Developers</a></p>
+          <p><a href="de.html">Difference of developer</a></p>
+          <p><a href="de.html">Roles and Responsibilities</a></p>
+          <p><a href="de.html">Demands of Developer</a></p>
+          <p><a href="de.html">Salary Packages of Developer</a></p>
+          <p><a href="de.html">Additional Considerations:</a></p>
+          <p><a href="de.html">Skills of Developer</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="data.html">What is data science?</a></p>
+          <p><a href="data.html">Why is data science important?</a></p>
+          <p><a href="data.html">History of data science</a></p>
+          <p><a href="data.html">Future of data science</a></p>
+          <p><a href="data.html">What does a data scientist do?</a></p>
+          <p><a href="data.html">Difference of data scientist</a></p>
+          <p><a href="data.html">Demands of Data Scientist</a></p>
+          <p><a href="data.html">Explosion of Data</a></p>
+          <p><a href="data.html">
+            Businesses Embracing Data-Driven Decision Making</a></p>
+          <p><a href="data.html">
+            Advancements in AI and Machine Learning</a></p>
+          <p><a href="data.html">
+            Emergence of Big Data Technologies</a></p>
+          <p><a href="data.html">Impact of Data Science on Innovation</a>
+         
+          <p><a href="data.html">salary Packages of data scientist</a></p>
+          <p><a href="data.html">Skills of Data Scientist</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+          <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+          <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+          <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+          <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+         
+          <p><a href="da.html">What is a Data Analyst?</a></p>
+          <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+          <p><a href="da.html">Who can become a Data Analyst?</a></p>
+          <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+          <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+          </p>
+        
+          <p><a href="da.html">Data Analyst Salary Packages</a></p>
+          <p><a href="da.html">Skills Required for Data Analysts</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="so.html">What Is a Software Developer?
+          </a></p>
+          <p><a href="so.html">What does a software developer do?</a></p>
+          <p><a href="so.html">Importance of Software Developers</a></p>
+          <p><a href="so.html">Differences Between Software Developer and Software Engineer
+          </a></p><br>
+          <p><a href="so.html">Roles and Responsibilities of a Software Developer
+          </a></p>
+          <p><a href="so.html">Demand for Software Developers</a></p>
+          <p><a href="so.html">Salary Packages for Software Developers</a></p>
+          <p><a href="so.html">Skills Required for Software Developers</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+          <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+          <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+          <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+          <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+          <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+          <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+          <br>
+          <hr>
+          <br>
+          <p><a href="test.html">What is Testing?</a></p>
+          <p><a href="test.html">Why is Testing Important?</a></p>
+          <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+          <p><a href="test.html">Salary Packages for Testers</a></p>
+          <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+          <p><a href="test.html">Skills Required for Tester</a></p>
+          
+      </aside>
+
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

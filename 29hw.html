@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+      body, h1, h2, h3, p, ul, li, form, input {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        background-color: white;
+        color: #333333;
+        padding: 20px;
+        font-size: large;
+      }
+  
+      header {
+        background-color: #f9cfaa;
+        color: black;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+  
+      header h1 {
+        margin: 0;
+        text-align: center;
+      }
+  
+      .search-toggle {
+        position: relative;
+      }
+  
+      .search-toggle label {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #f9cfaa;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+      }
+  
+      .search-toggle input[type="checkbox"] {
+        display: none;
+      }
+  
+      .search-form {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #f9cfaa;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+  
+      .search-form input[type="search"] {
+        padding: 5px;
+        width: 200px;
+      }
+  
+      .search-form input[type="submit"] {
+        padding: 5px 10px;
+        background-color: #f9cfaa;;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .search-form input[type="submit"]:hover {
+        background-color: #f7c293;
+      }
+  
+      .search-toggle input[type="checkbox"]:checked ~ .search-form {
+        display: block;
+      }
+  
+      nav {
+        background-color: #f9cfaa;
+        padding: 10px;
+      }
+  
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+  
+      nav ul li {
+        margin: 0 15px;
+      }
+  
+      nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+  
+      nav form {
+        margin-top: 10px;
+        text-align: center;
+      }
+  
+      nav input[type="search"] {
+        padding: 5px;
+        width: 200px;
+      }
+  
+      nav input[type="submit"] {
+        padding: 5px 10px;
+        background-color: #f9cfaa;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+  
+      nav input[type="submit"]:hover {
+        background-color: #f9cfaa;
+      }
+  
+      main {
+        display: flex;
+        justify-content: center;
+      }
+  
+      article {
+        padding: 20px;
+        max-width: 990px;
+        background-color: #ffe4cd;
+        margin-top: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+  
+      aside {
+  padding: 20px;
+  width: 300px;
+  background-color: #ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+  text-align: center;
+}
+
+aside hr {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+aside p {
+  margin-bottom: 15px;
+}
+
+aside p a {
+  display: block; 
+  text-decoration: none;
+  color: #333333;
+  padding: 5px 0; 
+  transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+  color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside li {
+  margin-bottom: 10px;
+}
+
+aside li a {
+  text-decoration: none;
+  color: #333333;
+  transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+  color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+  text-decoration: none; 
+  color: black; 
+}
+
+.home-icon {
+  font-size: 25px; 
+  margin-right: 88px; 
+}
+
+table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  }
+  th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+  th {
+      background-color: #ffe4cd;
+  }
+      footer {
+        background-color: #f9cfaa;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        margin-top: 30px;
+      }
+      aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+
+
+
+
+    </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+                <li><a href="ux.html">UX/UI Designer</a></li>
+                <li><a href="pr.html">Product Manager</a></li>
+                <li><a href="de.html">Developer</a></li>
+                <li><a href="data.html">Data Scientist</a></li>
+                <li><a href="da.html">Data Analyst</a></li>
+                <li><a href="so.html">Software Developer</a></li>
+                <li><a href="mobile.html">Mobile App Developer</a></li>
+                <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Careers in Software Development</h2>
+        
+    </center>  
+        <hr>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Software Career Guide, your comprehensive guide to careers in the software field. Whether you're a student exploring future career paths or a professional considering a switch, we provide valuable insights into various roles and opportunities in software development.Whether you're just starting your journey in technology or looking to advance your career, we're here to provide you with insights into the diverse roles, responsibilities, and opportunities available in the software industry.</p><br>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;In today’s digital age, software development spans across a multitude of industries, driving innovation and shaping the way we interact with technology. From designing user-friendly interfaces to analyzing vast amounts of data for actionable insights, the opportunities within the software field are vast and diverse.</p><br>
+        <br>
+         <center>
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/620x350/https://www.forbes.com/advisor/wp-content/uploads/2024/06/computer-science-degree-568x322.jpg">
+        </center>
+        <br>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;Explore our curated resources, stay updated on industry trends, and gain insights into the demand for various roles and competitive salary packages. Whether you’re starting your journey or aiming to advance in your current role, [Your Website Name] is here to empower you with the tools and information needed to succeed in the dynamic world of software development.</p><br>
+         <h3>Discover Roles and Responsibilities</h3>
+         <br>
+         <P>&nbsp;&nbsp;&nbsp;&nbsp;Navigate through detailed descriptions of key roles in the software industry.
+         </P>
+         <br>
+         <ol>
+            <li><b>UX/UI Designer:</b>&nbsp;UX/UI Designers focus on creating intuitive and visually appealing interfaces that enhance user experience. They collaborate closely with product managers, developers, and stakeholders to ensure designs meet user needs and business objectives. Key responsibilities include conducting user research, creating wireframes and prototypes, and optimizing designs based on user feedback.</li><br>
+            <li><b>Product Manager:</b>&nbsp;Product Managers are responsible for guiding the development and launch of products that meet customer needs and align with business goals. They oversee the entire product lifecycle, from initial concept and development through to launch and ongoing improvement. Key responsibilities include defining product strategy, prioritizing features, coordinating cross-functional teams, and analyzing market trends and user feedback.</li><br>
+            <li><b>Developer:</b>&nbsp;Developers are skilled in programming languages and frameworks to build software applications. They work closely with designers and product managers to translate requirements into functional code, conduct testing to identify and fix bugs, and ensure applications are optimized for performance and security. Developers may specialize in front-end (client-side), back-end (server-side), or full-stack development.</li><br>
+            <li><b>Data Scientist</b>&nbsp;Data Scientists utilize advanced analytical and statistical techniques to extract insights from large datasets. They apply machine learning algorithms and predictive modeling to solve complex business problems, identify patterns and trends, and make data-driven decisions. Key responsibilities include data mining, statistical analysis, data visualization, and developing algorithms for predictive analytics.</li><br>
+            <li><b>Data Analyst:</b>&nbsp;Data Analysts interpret data to help organizations make informed decisions. They collect, analyze, and interpret data using statistical tools and techniques to identify trends and patterns. Data Analysts also create reports and dashboards to communicate findings to stakeholders, support strategic planning, and optimize business processes based on data-driven insights.</li><br>
+            <li><b>Software Developer:</b>&nbsp;Software Developers design, develop, and deploy software applications tailored to specific user needs or organizational requirements. They write code in programming languages such as Java, Python, or C++, collaborate with cross-functional teams to ensure software meets quality standards and user expectations, and continuously improve and maintain existing applications through updates and bug fixes.</li>
+            <br>
+            <li><b>Mobile App Developer:</b>&nbsp;Mobile App Developers specialize in designing and building applications for mobile devices, such as smartphones and tablets. They develop user-friendly interfaces, ensure compatibility across different operating systems (iOS, Android), and optimize app performance and functionality. Mobile App Developers may work independently or as part of a larger development team, collaborating closely with UX/UI Designers and Backend Developers.
+            </li>
+            <br>
+            <li><b>Tester: </b>&nbsp;Testers, also known as Quality Assurance (QA) Analysts, play a crucial role in ensuring software quality and reliability. They design and execute test plans, identify and report bugs or issues, and verify that applications meet specified requirements and performance standards. Testers use automated testing tools and manual testing methods to validate software functionality across different scenarios and user environments.</li>
+            <br>
+            
+        </ol>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Learn about the typical responsibilities associated with each role and the specific skills required to excel in the software industry.</p>
+        <br>
+        <center>
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/620x350/https://www.forbes.com/advisor/wp-content/uploads/2024/04/edu1-568x322.jpg">
+        </center>
+        <br>
+        <h3>Explore a Career in Software Development</h3>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Welcome to your guide to starting a successful career in software development. Whether you're just beginning your journey or looking to advance your skills, we have the resources and insights you need to thrive in this dynamic field.</p>
+        <br>
+        <h3>Demands in the Software Industry</h3><br>
+       
+        <ol>
+            <li><b>High Growth:</b>&nbsp;The software industry is experiencing rapid expansion globally, with increasing demand across various sectors including technology, healthcare, finance, and more.</li><br>
+            <li><b>Versatility:</b>&nbsp;Software developers are sought after for their ability to create, maintain, and innovate digital solutions, making them indispensable in today's digital economy.</li><br>
+            <li><b>Continuous Learning:</b>&nbsp;Stay at the forefront of technology trends and frameworks is essential, making ongoing learning and skill development crucial.</li><br>
+        </ol>
+       
+        <h3>Key Skills for Success</h3>
+        
+        <ol>
+            <li><b>Programming Languages:</b>&nbsp;Proficiency in languages such as Python, Java, JavaScript, and C++ is often required, with specialization in frameworks like React, Angular, or Django beneficial.Proficiency in languages such as Python, Java, JavaScript, and C++ is essential, as they form the backbone of software development across various domains. Specializing in frameworks like React, Angular, or Django adds depth to your skill set and makes you more versatile in the job market.</li>
+            <br>
+            <li><b>Problem-Solving:</b>&nbsp;Ability to analyze complex problems and develop effective solutions.Software developers are problem-solvers at their core. They analyze complex issues, break them down into manageable parts, and apply logical thinking and creativity to devise efficient solutions. This skill is crucial for writing efficient code and optimizing software performance.
+
+            </li><br>
+            <li><b>Collaboration:</b>&nbsp;Working effectively in teams, often in agile or cross-functional environments.Working effectively in teams is a hallmark of successful software development projects. Agile methodologies, which emphasize collaboration and adaptability, are common in the industry. Strong collaboration skills involve communication, empathy, and the ability to contribute effectively within cross-functional teams.
+            </li>
+        </ol>
+        <h3>Salary Packages  </h3>
+        <br>
+        <ol>
+            <li><b>Entry-Level:</b>&nbsp;Typically ranges from $60,000 to $80,000 annually, depending on location and company size.Starting salaries typically range from $60,000 to $80,000 annually, depending on factors like location and company size. Entry-level positions offer opportunities to gain foundational experience and skills in real-world projects.
+            </li><br>
+            <li><b>Mid-Level:</b>&nbsp;$80,000 to $120,000, with opportunities for additional bonuses or stock options in tech companies.Salaries increase to between $80,000 and $120,000 annually. At this level, professionals often take on more responsibility, contribute to larger projects, and may lead smaller teams or initiatives within their organization.
+            </li><br>
+            <li><b>Senior-Level:</b>&nbsp;$120,000 and above, with potential for six-figure salaries and leadership roles. Experienced professionals can earn $120,000 and above annually, often with opportunities for significant bonuses, stock options, and leadership roles. Senior-level positions require deep technical expertise, strategic thinking, and the ability to mentor junior team members.
+            </li><br>
+        </ol>
+        <h3>Career Paths</h3>
+       
+        <ol>
+            <li><b>Software Engineer:</b>&nbsp;As software engineers, individuals design, develop, and maintain software applications. They collaborate closely with stakeholders to understand requirements, write code, conduct testing, and ensure that software solutions meet user needs and business goals.
+            </li><br>
+            <li><b>Full-Stack Developer:</b>&nbsp;Full-stack developers are proficient in both front-end and back-end technologies. They build entire web applications, from user interface design and development to server-side logic and database management. This role requires a broad understanding of various technologies and frameworks.</li><br>
+            <li><b>DevOps Engineer:</b>&nbsp; DevOps engineers focus on streamlining the development and deployment processes. They automate tasks, improve collaboration between development and IT operations teams, and ensure continuous integration and delivery of software products. DevOps skills are increasingly in demand as organizations strive for faster and more reliable software releases.</li><br>
+        </ol>
+        <h3>Education and Training</h3>
+        <ol>
+            <li><b>Degree Programs:</b>&nbsp;A Bachelor’s degree in Computer Science or related fields provides a solid foundation in algorithms, data structures, software design, and programming languages. Some roles, especially in research or specialized domains, may require a Master’s degree for deeper theoretical knowledge and advanced skills.</li><br>
+            <li><b>Bootcamps and Online Courses: </b>&nbsp;Bootcamps offer intensive, hands-on training in specific programming languages, frameworks, and software development practices. Online courses from platforms like Coursera, edX, and Udacity provide flexibility and accessibility to learn new skills or deepen existing ones without committing to a full degree program.</li><br>
+        </ol>
+        
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, embarking on a career in software development opens doors to a dynamic and rapidly evolving field. Success in this industry hinges on mastering essential programming languages, cultivating problem-solving prowess, and fostering collaborative skills within agile environments. The potential for career growth is substantial, with competitive salary packages reflecting expertise and experience levels. Whether through formal education, bootcamps, or online learning platforms, continuous skill development is key. By leveraging resources like coding communities and embracing technological trends, aspiring software professionals can build a solid foundation for a rewarding journey in software development, characterized by innovation, impact, and ongoing learning </p>
+        <br>
+
+
+    </article>
+
+        <aside>
+            
+            <h2>Table Of Contents</h2>
+            <hr>
+            <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+         <!--
+            <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+        -->
+            <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+            <p><a href="29hw.html">Demands in the Software Industry</a></p>
+            <p><a href="29hw.html">Key Skills for Success</a></p>
+            <p><a href="29hw.html">Salary Packages</a></p>
+            <p><a href="29hw.html">Career Paths</a></p>
+            <p><a href="29hw.html">Education and Training</a></p>
+            <p><a href="29hw.html">Resources for Learning</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+            <p><a href="ux.html">What Is UI Design</a></p>
+            <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+            <p><a href="ux.html">Look vs. Feel</a></p>
+            <p><a href="ux.html">Design vs. Prototyping</a></p>
+            <p><a href="ux.html">High-Level vs. Details</a></p>
+            <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+            <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+            <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+            <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+            <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+            <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+            <p><a href="ux.html">Conclusion Ux designer</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="pr.html">Importance of Product Managers</a></p>
+            <p><a href="pr.html">Difference from Other Roles</a></p>
+            <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+            <p><a href="pr.html">Demands of product manager</a></p>
+            <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+            <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="de.html">Importance of Developers</a></p>
+            <p><a href="de.html">Difference of developer</a></p>
+            <p><a href="de.html">Roles and Responsibilities</a></p>
+            <p><a href="de.html">Demands of Developer</a></p>
+            <p><a href="de.html">Salary Packages of Developer</a></p>
+            <p><a href="de.html">Additional Considerations:</a></p>
+            <p><a href="de.html">Skills of Developer</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="data.html">What is data science?</a></p>
+            <p><a href="data.html">Why is data science important?</a></p>
+            <p><a href="data.html">History of data science</a></p>
+            <p><a href="data.html">Future of data science</a></p>
+            <p><a href="data.html">What does a data scientist do?</a></p>
+            <p><a href="data.html">Difference of data scientist</a></p>
+            <p><a href="data.html">Demands of Data Scientist</a></p>
+            <p><a href="data.html">Explosion of Data</a></p>
+            <p><a href="data.html">
+              Businesses Embracing Data-Driven Decision Making</a></p>
+            <p><a href="data.html">
+              Advancements in AI and Machine Learning</a></p>
+            <p><a href="data.html">
+              Emergence of Big Data Technologies</a></p>
+            <p><a href="data.html">Impact of Data Science on Innovation</a>
+           
+            <p><a href="data.html">salary Packages of data scientist</a></p>
+            <p><a href="data.html">Skills of Data Scientist</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+            <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+            <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+            <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+            <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+           
+            <p><a href="da.html">What is a Data Analyst?</a></p>
+            <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+            <p><a href="da.html">Who can become a Data Analyst?</a></p>
+            <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+            <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+            </p>
+          
+            <p><a href="da.html">Data Analyst Salary Packages</a></p>
+            <p><a href="da.html">Skills Required for Data Analysts</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="so.html">What Is a Software Developer?
+            </a></p>
+            <p><a href="so.html">What does a software developer do?</a></p>
+            <p><a href="so.html">Importance of Software Developers</a></p>
+            <p><a href="so.html">Differences Between Software Developer and Software Engineer
+            </a></p><br>
+            <p><a href="so.html">Roles and Responsibilities of a Software Developer
+            </a></p>
+            <p><a href="so.html">Demand for Software Developers</a></p>
+            <p><a href="so.html">Salary Packages for Software Developers</a></p>
+            <p><a href="so.html">Skills Required for Software Developers</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+            <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+            <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+            <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+            <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+            <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+            <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+            <br>
+            <hr>
+            <br>
+            <p><a href="test.html">What is Testing?</a></p>
+            <p><a href="test.html">Why is Testing Important?</a></p>
+            <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+            <p><a href="test.html">Salary Packages for Testers</a></p>
+            <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+            <p><a href="test.html">Skills Required for Tester</a></p>
+            
+        </aside>
+
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

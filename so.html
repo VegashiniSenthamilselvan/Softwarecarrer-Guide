@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center;
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; 
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; 
+    transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; 
+    color: black; 
+}
+
+.home-icon {
+    font-size: 25px; 
+    margin-right: 88px; 
+}
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #ffe4cd;
+    }
+footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+
+      </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+            <li><a href="ux.html">UX/UI Designer</a></li>
+            <li><a href="pr.html">Product Manager</a></li>
+            <li><a href="de.html">Developer</a></li>
+            <li><a href="data.html">Data Scientist</a></li>
+            <li><a href="da.html">Data Analyst</a></li>
+            <li><a href="so.html">Software Developer</a></li>
+            <li><a href="mobile.html">Mobile App Developer</a></li>
+            <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Software Developer</h2>
+        
+    </center>  
+
+    <hr>
+    <br>
+    <h3>What Is a Software Developer?</h3>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers create computer programs and solve technical problems using their creativity, analytical thinking and problem-solving skills. With the world becoming more digitised, these professionals are high in demand. While software development is a lucrative profession, you need to have the necessary education, qualification, practical training and skills to be successful in this career. In this article, we will discuss what is a software developer, what they do, why become one, explore their salary, understand the skills, programming language needed and steps required to become a software developer.</p>
+    <br>
+    <center>
+        <img src="data:image/png;base64,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">
+    </center>
+    <br>
+    <h3>What does a software developer do?</h3>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;A software developer writes code to build online structures, environments and applications. As a result, mastery over one or more programming language is necessary for this job role. They perform the following tasks.Develop and test software based on client's specifications
+        Upgrade existing software
+        Document their work for future references
+        Perform quality assurance on applications they develop or upgrade</p>
+    <br>
+    <h3>Importance of Software Developers</h3>
+<br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers play a crucial role in shaping the modern world through technology. Their importance stems from various factors:</p>
+
+    <ol>
+    <li><strong>Innovation and Technology Advancement:</strong> Software developers drive innovation by creating new applications, platforms, and technologies that improve efficiency, solve problems, and enhance user experiences.</li>
+    <br>
+    <li><strong>Business Growth and Efficiency:</strong> They develop customized software solutions that streamline processes, automate tasks, and enable businesses to operate more efficiently.</li>
+    <br>
+    <li><strong>Digital Transformation:</strong> In an increasingly digital world, software developers enable organizations to adapt and thrive by implementing digital transformation strategies and integrating new technologies.</li>
+    <br>
+    <li><strong>Job Creation and Economic Impact:</strong> The software development industry contributes significantly to job creation and economic growth, fostering opportunities for skilled professionals and driving technological advancements.</li>
+    <br>
+    <li><strong>Cross-Industry Impact:</strong> Software developers impact various sectors including healthcare, finance, education, and entertainment, by creating software solutions tailored to specific industry needs.</li>
+    <br>
+    <li><strong>Continuous Improvement and Learning:</strong> They continuously learn and adapt to new technologies, frameworks, and programming languages, contributing to their own professional growth and the evolution of the field.</li>
+    <br>
+    <li><strong>Security and Reliability:</strong> Ensuring the security and reliability of software applications is paramount. Developers implement best practices and protocols to protect data and maintain system integrity.</li>
+    <br>
+    <li><strong>User-Centric Design:</strong> By focusing on user experience and interface design, software developers create intuitive and user-friendly applications that meet the needs and expectations of end-users.</li>
+    <br>
+    <li><strong>Collaboration and Teamwork:</strong> They collaborate with designers, engineers, project managers, and stakeholders to create cohesive and effective software solutions that align with business goals.</li>
+</ol>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Overall, software developers are instrumental in driving technological innovation, economic growth, and digital transformation across industries, making their role indispensable in the modern economy.</p>
+<br><h3>Differences Between Software Developer and Software Engineer</h3>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers are essential in creating innovative software solutions that drive business success and enhance user experiences across various industries.</p>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Aspect</th>
+            <th>Software Developer</th>
+            <th>Software Engineer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Focus</strong></td>
+            <td>Primarily focuses on coding, implementation, and testing of software applications.</td>
+            <td>Focuses on designing, developing, and testing complex software systems and architectures.</td>
+        </tr>
+        <tr>
+            <td><strong>Role Scope</strong></td>
+            <td>Often involved in the entire software development lifecycle, from requirements gathering to maintenance.</td>
+            <td>Designs and oversees the architecture of software systems, considering scalability, performance, and integration.</td>
+        </tr>
+        <tr>
+            <td><strong>Skills Required</strong></td>
+            <td>Proficiency in programming languages, frameworks, and tools for application development.</td>
+            <td>Requires knowledge of software design patterns, algorithms, and system architecture principles.</td>
+        </tr>
+        <tr>
+            <td><strong>Problem Solving</strong></td>
+            <td>Focuses on solving specific technical challenges and coding tasks.</td>
+            <td>Engages in broader problem-solving, including system optimization, performance tuning, and scalability.</td>
+        </tr>
+        <tr>
+            <td><strong>Team Collaboration</strong></td>
+            <td>Works closely with other developers, QA engineers, and stakeholders.</td>
+            <td>Collaborates with cross-functional teams, including architects, project managers, and domain experts.</td>
+        </tr>
+        <tr>
+            <td><strong>Responsibility</strong></td>
+            <td>Responsible for delivering specific components or features of a software application.</td>
+            <td>Has broader responsibility for the overall design, functionality, and performance of software systems.</td>
+        </tr>
+        <tr>
+            <td><strong>Educational Background</strong></td>
+            <td>No specific educational requirement beyond programming skills, though a degree in computer science or related field is common.</td>
+            <td>Typically holds a degree in computer science or software engineering, with a focus on software design and architecture.</td>
+        </tr>
+    </tbody>
+</table>
+ <br>
+ <h3>Roles and Responsibilities of a Software Developer</h3>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers play a pivotal role in designing, developing, and maintaining software applications. Their responsibilities typically include:</p>
+<br>
+<b>Software Development</b>
+<ol>
+    <li>Writing clean, scalable code using programming languages such as Java, Python, JavaScript, etc.</li>
+    <li>Developing software solutions based on technical specifications and requirements.</li>
+    <li>Testing and debugging applications to ensure functionality and identify defects.</li>
+    <li>Integrating software components and third-party programs.</li>
+</ol>
+
+<b>Collaboration and Teamwork</b>
+<ol>
+    <li>Working closely with other developers, designers, and project managers in a collaborative environment.</li>
+    <li>Participating in code reviews to ensure code quality and adherence to coding standards.</li>
+    <li>Contributing to team discussions and decision-making processes.</li>
+</ol>
+
+<b>Problem-Solving and Troubleshooting</b>
+<ol>
+    <li>Analyzing and resolving technical issues in software applications.</li>
+    <li>Implementing solutions to improve application performance and usability.</li>
+    <li>Responding to user feedback and addressing customer support inquiries related to software functionality.</li>
+</ol>
+
+<b>Documentation and Maintenance</b>
+<ol>
+    <li>Documenting software functionalities, technical specifications, and development processes.</li>
+    <li>Maintaining and upgrading existing software applications to meet evolving user needs and technology trends.</li>
+    <li>Ensuring software security and data protection measures are implemented.</li>
+</ol>
+
+<b>Continuous Learning and Professional Development</b>
+<ol>
+    <li>Staying updated with new technologies, tools, and programming languages.</li>
+    <li>Participating in professional development activities such as workshops, courses, and certifications.</li>
+    <li>Adopting best practices in software development and contributing to knowledge sharing within the team.</li>
+</ol>
+<br>
+<h3>Demand for Software Developers</h3>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers are in high demand across various industries due to their critical role in creating and maintaining software applications. Key factors driving this demand include:</p>
+
+<ol>
+    <li><strong>Technological Advancements:</strong> Rapid advancements in technology, such as artificial intelligence, cloud computing, and cybersecurity, require skilled developers to innovate and implement new solutions.</li>
+    
+    <li><strong>Digital Transformation:</strong> Organizations are increasingly investing in digital transformation initiatives, driving the need for developers who can build and integrate scalable software solutions.</li>
+    <br>
+    <li><strong>Software as a Service (SaaS) Growth:</strong> The growth of SaaS platforms has created demand for developers to build and maintain cloud-based applications that offer flexibility and scalability.</li>
+    <br>
+    <li><strong>Mobile App Development:</strong> With the rise in mobile device usage, there is a continuous demand for developers skilled in mobile app development across platforms like iOS and Android.</li>
+    <br>
+    <li><strong>E-commerce and Online Services:</strong> The expansion of e-commerce platforms and online services requires developers to create robust, secure, and user-friendly web applications.</li>
+    <br>
+    <li><strong>Remote Work and Collaboration Tools:</strong> The shift towards remote work has increased the demand for developers who can create collaboration tools, communication platforms, and remote work solutions.</li>
+    <br>
+    <li><strong>Data Security and Privacy:</strong> Developers with expertise in cybersecurity and data protection are essential as organizations prioritize secure software development practices.</li>
+    <br>
+    <li><strong>Global Job Market:</strong> The global nature of software development allows developers to work remotely or relocate globally, contributing to a broader job market and career opportunities.</li>
+</ol>  
+  <br> 
+  <h3>Salary Packages for Software Developers</h3>
+<br>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers typically receive competitive salaries that vary based on factors such as experience, location, industry, and company size. Here's an overview:</p>
+  <br>
+  <ol>
+      <li><strong>Entry-Level:</strong> Entry-level software developers with 0-2 years of experience can expect to earn between $60,000 to $80,000 annually.</li>
+      <br>
+      <li><strong>Mid-Level:</strong> Developers with 3-5 years of experience earn salaries ranging from $80,000 to $100,000 per year.</li>
+      <br>
+      <li><strong>Senior-Level:</strong> Senior software developers with over 5 years of experience or in managerial roles can earn upwards of $100,000 annually, often reaching $120,000 or more depending on expertise and location.</li>
+      <br>
+      <li><strong>Location:</strong> Salaries vary significantly by location, with developers in major tech hubs or cities like San Francisco, New York, or Seattle commanding higher salaries due to cost of living and demand.</li>
+      <br>
+      <li><strong>Industry:</strong> Software developers in sectors such as finance, healthcare, and technology tend to earn higher salaries due to the complexity and critical nature of their work.</li>
+      <br>
+      <li><strong>Skills and Specializations:</strong> Developers with specialized skills in areas such as machine learning, blockchain, or cloud computing often receive higher compensation due to high demand and specialized knowledge.</li>
+  </ol>
+  <br>
+  <h3>Skills Required for Software Developers</h3>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Software developers require a diverse set of technical and non-technical skills to succeed in their roles. Key skills include:</p>
+
+<ol>
+    <li><strong>Programming Languages:</strong> Proficiency in programming languages such as Java, Python, JavaScript, C#, etc., depending on the development stack and project requirements.</li>
+    <br>
+    <li><strong>Software Development Frameworks:</strong> Knowledge of frameworks like Spring, Django, React, Angular, or .NET for efficient development and code reuse.</li>
+    <br>
+    <li><strong>Database Management:</strong> Ability to design and work with databases using SQL or NoSQL technologies like MySQL, PostgreSQL, MongoDB, etc.</li>
+    <br>
+    <li><strong>Version Control:</strong> Familiarity with version control systems such as Git for collaborative development and code management.</li>
+    <br>
+    <li><strong>Web Development:</strong> Understanding of front-end development (HTML, CSS, JavaScript) and back-end development (server-side frameworks, APIs).</li>
+    <br>
+    <li><strong>Problem-Solving:</strong> Analytical and problem-solving skills to debug issues, optimize code performance, and implement efficient solutions.</li>
+    <br>
+    <li><strong>Algorithm and Data Structures:</strong> Knowledge of algorithms and data structures to optimize code efficiency and solve complex problems.</li>
+    <br>
+    <li><strong>Software Testing:</strong> Experience with testing methodologies (unit testing, integration testing) and tools to ensure software quality and reliability.</li>
+    <br>
+    <li><strong>Agile Methodologies:</strong> Understanding of Agile practices (Scrum, Kanban) for iterative development, collaboration, and continuous improvement.</li>
+    <br>
+    <li><strong>Communication:</strong> Effective communication skills to collaborate with team members, stakeholders, and clients, and to document technical specifications and requirements.</li>
+</ol>
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;These skills enable software developers to create robust and scalable software solutions, contribute effectively to team projects, and adapt to evolving technologies and industry practices.</p>
+
+
+</article>
+
+<aside>
+            
+  <h2>Table Of Contents</h2>
+  <hr>
+  <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+<!--
+  <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+-->
+  <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+  <p><a href="29hw.html">Demands in the Software Industry</a></p>
+  <p><a href="29hw.html">Key Skills for Success</a></p>
+  <p><a href="29hw.html">Salary Packages</a></p>
+  <p><a href="29hw.html">Career Paths</a></p>
+  <p><a href="29hw.html">Education and Training</a></p>
+  <p><a href="29hw.html">Resources for Learning</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+  <p><a href="ux.html">What Is UI Design</a></p>
+  <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+  <p><a href="ux.html">Look vs. Feel</a></p>
+  <p><a href="ux.html">Design vs. Prototyping</a></p>
+  <p><a href="ux.html">High-Level vs. Details</a></p>
+  <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+  <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+  <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+  <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+  <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+  <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+  <p><a href="ux.html">Conclusion Ux designer</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="pr.html">Importance of Product Managers</a></p>
+  <p><a href="pr.html">Difference from Other Roles</a></p>
+  <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+  <p><a href="pr.html">Demands of product manager</a></p>
+  <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+  <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="de.html">Importance of Developers</a></p>
+  <p><a href="de.html">Difference of developer</a></p>
+  <p><a href="de.html">Roles and Responsibilities</a></p>
+  <p><a href="de.html">Demands of Developer</a></p>
+  <p><a href="de.html">Salary Packages of Developer</a></p>
+  <p><a href="de.html">Additional Considerations:</a></p>
+  <p><a href="de.html">Skills of Developer</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="data.html">What is data science?</a></p>
+  <p><a href="data.html">Why is data science important?</a></p>
+  <p><a href="data.html">History of data science</a></p>
+  <p><a href="data.html">Future of data science</a></p>
+  <p><a href="data.html">What does a data scientist do?</a></p>
+  <p><a href="data.html">Difference of data scientist</a></p>
+  <p><a href="data.html">Demands of Data Scientist</a></p>
+  <p><a href="data.html">Explosion of Data</a></p>
+  <p><a href="data.html">
+    Businesses Embracing Data-Driven Decision Making</a></p>
+  <p><a href="data.html">
+    Advancements in AI and Machine Learning</a></p>
+  <p><a href="data.html">
+    Emergence of Big Data Technologies</a></p>
+  <p><a href="data.html">Impact of Data Science on Innovation</a>
+ 
+  <p><a href="data.html">salary Packages of data scientist</a></p>
+  <p><a href="data.html">Skills of Data Scientist</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+  <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+  <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+  <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+  <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+ 
+  <p><a href="da.html">What is a Data Analyst?</a></p>
+  <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+  <p><a href="da.html">Who can become a Data Analyst?</a></p>
+  <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+  <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+  </p>
+
+  <p><a href="da.html">Data Analyst Salary Packages</a></p>
+  <p><a href="da.html">Skills Required for Data Analysts</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="so.html">What Is a Software Developer?
+  </a></p>
+  <p><a href="so.html">What does a software developer do?</a></p>
+  <p><a href="so.html">Importance of Software Developers</a></p>
+  <p><a href="so.html">Differences Between Software Developer and Software Engineer
+  </a></p><br>
+  <p><a href="so.html">Roles and Responsibilities of a Software Developer
+  </a></p>
+  <p><a href="so.html">Demand for Software Developers</a></p>
+  <p><a href="so.html">Salary Packages for Software Developers</a></p>
+  <p><a href="so.html">Skills Required for Software Developers</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+  <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+  <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+  <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+  <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+  <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+  <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+  <br>
+  <hr>
+  <br>
+  <p><a href="test.html">What is Testing?</a></p>
+  <p><a href="test.html">Why is Testing Important?</a></p>
+  <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+  <p><a href="test.html">Salary Packages for Testers</a></p>
+  <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+  <p><a href="test.html">Skills Required for Tester</a></p>
+  
+</aside>
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

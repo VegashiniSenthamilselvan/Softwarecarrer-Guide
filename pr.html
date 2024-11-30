@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrer</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center; 
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; 
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; 
+    transition: color 0.3s ease; 
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; 
+    color: black; 
+}
+
+.home-icon {
+    font-size: 25px; 
+    margin-right: 88px;
+}
+table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #ffe4cd;
+    }
+
+        footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+      </style>
+    </head>
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <div>
+                <a href="29hw.html" class="home-link">
+                    <span class="home-icon">&#127968;</span>
+                </a>
+            </div>
+            
+               
+            <li><a href="ux.html">UX/UI Designer</a></li>
+            <li><a href="pr.html">Product Manager</a></li>
+            <li><a href="de.html">Developer</a></li>
+            <li><a href="data.html">Data Scientist</a></li>
+            <li><a href="da.html">Data Analyst</a></li>
+            <li><a href="so.html">Software Developer</a></li>
+            <li><a href="mobile.html">Mobile App Developer</a></li>
+            <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+
+
+    <main>
+        <article>
+         <center>         
+        <h2>Product Manager</h2>
+        <hr>
+        <br>
+        <img src="https://cdn.sanity.io/images/tlr8oxjg/production/8654239949755df40b9750508d22e758ea155d4d-945x530.png?w=3840&q=80&fit=clip&auto=format" style="heigth:200px; width:200px">
+        <br><br>
+        </center>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;A product manager (PM) is a professional role that is responsible for the development of products for an organization, known as the practice of product management. Product managers own the product strategy behind a product (physical or digital), specify its functional requirements, and manage feature releases. Product managers coordinate work done by many other functions (like software engineers, data scientists, and product designers), and are ultimately responsible for product outcomes.</p>
+        <br>
+        <p>&nbsp;;&nbsp;&nbsp;&nbsp;A product manager considers numerous factors such as the intended customer or user of a product, the products the competition offers, and how well the product fits with the company's business model. The scope of a product manager varies greatly, some may manage one or more product lines and others (especially in large companies) may manage small components or features of a product.</p>
+        <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;In the financial services industry (banking, insurance, etc.), product managers manage financial products (for example, credit card portfolios), their profit and loss, and also determine the business development strategy.</p>  
+
+        <br>
+        <h3>Importance of Product Managers</h3>
+        <br>
+        <ol>
+            <li><b>Strategic Alignment:</b>&nbsp;Product Managers align product development with business goals and market needs. They define the product roadmap, prioritize features, and ensure that resources are allocated effectively.</li><br>
+            <li><b>User-Centered Design:</b>&nbsp;PMs advocate for users by incorporating feedback and usability insights into product development. They ensure that the final product meets customer expectations and provides a positive user experience.</li><br>
+            <li><b>Cross-Functional Collaboration: </b>&nbsp;PMs facilitate communication and collaboration between different teams involved in product development. They coordinate workflows, resolve conflicts, and ensure that everyone is working towards a common goal.</li><br>
+            <li><b>Market Understanding:</b>&nbsp;PMs conduct market research and competitive analysis to identify opportunities and threats. They stay updated on industry trends and customer preferences to make informed decisions.</li><br>
+            <li><b>Decision Making: </b>&nbsp;PMs make strategic decisions based on data, user feedback, and business objectives. They prioritize features, allocate resources, and define success metrics to measure product performance.</li><br>
+        </ol>
+        <h3>Difference from Other Roles</h3>
+        <br>
+        <table>
+            <tr>
+              <th>Role</th>
+              <th>Description</th>
+              <th>Main Responsibilities</th>
+            </tr>
+            <tr>
+              <td>Product Owner</td>
+              <td>In Agile development, manages the product backlog and prioritizes tasks for the development team.</td>
+              <td>Manage backlog, prioritize features, collaborate with stakeholders.</td>
+            </tr>
+            <tr>
+              <td>Project Manager</td>
+              <td>Focuses on managing the execution of specific projects, ensuring tasks are completed on time and within budget.</td>
+              <td>Project planning, resource allocation, risk management, timeline management.</td>
+            </tr>
+            <tr>
+              <td>UX/UI Designer</td>
+              <td>Focuses on creating the visual and interactive aspects of the product to ensure usability and aesthetics.</td>
+              <td>Wireframing, prototyping, visual design, user testing, collaborating with developers.</td>
+            </tr>
+            <tr>
+              <td>Product Manager</td>
+              <td>Responsible for the overall product strategy, market fit, and lifecycle management.</td>
+              <td>Market analysis, defining product roadmap, cross-functional leadership, decision-making.</td>
+            </tr>
+          </table>
+          <br>
+          <h3>Roles and Responsibilities of product manager</h3>
+          <br>
+          <ol>
+            <li><b>Strategy Development: </b>&nbsp;The product vision, roadmap, and strategy in alignment with company goals and market trends.</li><br>
+            <li><b>Requirements Gathering:</b>&nbsp;Collaborate with stakeholders to gather and prioritize product requirements, ensuring clarity and feasibility.</li><br>
+            <li><b>Cross-functional Coordination:</b>&nbsp; Work closely with engineering, design, marketing, and other teams to deliver products on time and within budget.</li><br>
+            <li><b>User Experience Advocacy: </b>&nbsp;Advocate for a seamless and intuitive user experience, incorporating user feedback and usability testing into product iterations.</li><br>
+            <li><b>Market Analysis:</b>&nbsp;Conduct market research and competitive analysis to identify opportunities, trends, and potential threats.</li><br>
+            <li><b>Metrics and Analytics:</b>&nbsp;Define key performance indicators (KPIs) and metrics to measure product success, analyze data, and make data-driven decisions.</li><br>
+            <li><b>Product Launch and Support:</b>&nbsp;Coordinate product launches, monitor performance post-launch, and address customer feedback and issues.</li><br>
+          </ol>
+          <h3>Demands of product manager</h3>
+          <br>
+          <ol>
+            <li><b>Adaptability:</b>&nbsp;Product Managers must thrive in fast-paced environments where priorities and requirements can change rapidly. They need to quickly adjust strategies and plans to meet evolving market conditions and business needs.</li><br>
+            <li><b>Leadership:</b>&nbsp;Strong leadership skills are essential for Product Managers to motivate their teams, foster collaboration, and drive initiatives forward. They should be capable of resolving conflicts, making tough decisions, and inspiring others towards a shared vision.</li><br>
+            <li><b>Communication:</b>&nbsp;Excellent communication skills are crucial for articulating the product vision, gathering requirements from stakeholders, and updating both technical and non-technical teams on project progress. Clear and effective communication ensures alignment and reduces misunderstandings.</li><br>
+            <li><b>Problem-Solving:</b>&nbsp;Product Managers need strong analytical and critical thinking skills to identify problems, analyze data, evaluate options, and implement effective solutions. They must anticipate challenges and proactively address issues to keep projects on track.</li><br>
+            <li><b>Customer Focus:</b>&nbsp;A deep understanding of customer needs, behaviors, and pain points is essential for Product Managers. They should advocate for the user throughout the product development lifecycle to ensure the final product meets user expectations and delivers value.</li><br>
+          </ol>
+          <h3>Salary Packages of Product Manager</h3>
+          <br>
+          <ol>
+            <li><b>Entry-level:</b>&nbsp;Entry-level Product Managers in the software industry typically earn between $60,000 to $90,000 per year. Salaries may vary based on factors such as location (e.g., major tech hubs vs. smaller cities) and company size (e.g., startup vs. established corporation).</li><br>
+            <li><b>Mid-level:</b>&nbsp;Mid-level Product Managers can expect salaries ranging from $90,000 to $130,000 annually. Compensation at this level often reflects increased experience, responsibility, and contributions to product success.</li><br>
+            <li><b>Senior-level:</b>&nbsp;Senior Product Managers with extensive experience and a proven track record may earn salaries starting from $130,000 and upwards, potentially reaching $200,000 or more. Senior roles often include additional perks such as bonuses, stock options, and other incentives tied to company performance.</li><br>
+          </ol>
+          <h3>Skills of Graduates in the Software Field</h3>
+          <br>
+          <ol>
+            <li><b>Technical Proficiency:</b>&nbsp;Graduates should possess familiarity with software development processes, programming languages, and industry best practices. This technical foundation helps Product Managers understand development challenges, evaluate technical feasibility, and communicate effectively with engineering teams.</li><br>
+            <li><b>Project Management:</b>&nbsp;Skills in project planning, organizing, and execution are essential for managing product lifecycles effectively. Knowledge of Agile or Scrum methodologies enables Product Managers to coordinate cross-functional teams, prioritize tasks, and adapt to changing project requirements.</li><br>
+            <li><b>Business Acumen:</b>&nbsp;Understanding market dynamics, competitive analysis, and financial principles related to product development is crucial. Product Managers need to make informed decisions aligned with business goals, identify market opportunities, and drive product strategy based on market trends and customer insights.
+            </li><br>
+            <li><b>User-Centered Design:</b>&nbsp;Knowledge of UX/UI principles ensures that Product Managers can collaborate effectively with designers to create intuitive, user-friendly interfaces. They should champion user research, usability testing, and iterative design processes to enhance product usability and customer satisfaction.</li><br>
+            <li><b>Data Analysis:</b>&nbsp;Ability to interpret data, perform quantitative analysis, and derive actionable insights is valuable for making data-driven decisions. Product Managers use metrics and analytics to measure product performance, validate assumptions, and optimize features based on user behavior and feedback.</li><br>
+          </ol>
+          
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, Product Managers are integral to the success of software products, serving as the driving force behind their development, launch, and ongoing refinement. Their multifaceted role combines strategic vision with practical execution, bridging the gap between market demands, user needs, and business objectives.</p>
+          <br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;Product Managers bring a unique blend of skills including leadership, communication, problem-solving, and a deep understanding of both technology and market dynamics. They champion user-centric design, ensure cross-functional collaboration, and make data-informed decisions to deliver products that resonate with users and achieve organizational goals.</p>
+          <br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;As pivotal orchestrators of product lifecycles, Product Managers navigate complex challenges with agility, adaptability, and a relentless focus on innovation. Their ability to synthesize diverse perspectives, drive consensus, and lead teams toward shared goals makes them indispensable in shaping the future of software innovation. In essence, Product Managers not only steer the course of product development but also play a crucial role in shaping customer experiences and driving business growth in competitive markets.</p>
+        <br>
+       
+       
+    </article>
+
+    <aside>
+            
+      <h2>Table Of Contents</h2>
+      <hr>
+      <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+   <!--
+      <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+  -->
+      <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+      <p><a href="29hw.html">Demands in the Software Industry</a></p>
+      <p><a href="29hw.html">Key Skills for Success</a></p>
+      <p><a href="29hw.html">Salary Packages</a></p>
+      <p><a href="29hw.html">Career Paths</a></p>
+      <p><a href="29hw.html">Education and Training</a></p>
+      <p><a href="29hw.html">Resources for Learning</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+      <p><a href="ux.html">What Is UI Design</a></p>
+      <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+      <p><a href="ux.html">Look vs. Feel</a></p>
+      <p><a href="ux.html">Design vs. Prototyping</a></p>
+      <p><a href="ux.html">High-Level vs. Details</a></p>
+      <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+      <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+      <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+      <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+      <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+      <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+      <p><a href="ux.html">Conclusion Ux designer</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="pr.html">Importance of Product Managers</a></p>
+      <p><a href="pr.html">Difference from Other Roles</a></p>
+      <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+      <p><a href="pr.html">Demands of product manager</a></p>
+      <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+      <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="de.html">Importance of Developers</a></p>
+      <p><a href="de.html">Difference of developer</a></p>
+      <p><a href="de.html">Roles and Responsibilities</a></p>
+      <p><a href="de.html">Demands of Developer</a></p>
+      <p><a href="de.html">Salary Packages of Developer</a></p>
+      <p><a href="de.html">Additional Considerations:</a></p>
+      <p><a href="de.html">Skills of Developer</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="data.html">What is data science?</a></p>
+      <p><a href="data.html">Why is data science important?</a></p>
+      <p><a href="data.html">History of data science</a></p>
+      <p><a href="data.html">Future of data science</a></p>
+      <p><a href="data.html">What does a data scientist do?</a></p>
+      <p><a href="data.html">Difference of data scientist</a></p>
+      <p><a href="data.html">Demands of Data Scientist</a></p>
+      <p><a href="data.html">Explosion of Data</a></p>
+      <p><a href="data.html">
+        Businesses Embracing Data-Driven Decision Making</a></p>
+      <p><a href="data.html">
+        Advancements in AI and Machine Learning</a></p>
+      <p><a href="data.html">
+        Emergence of Big Data Technologies</a></p>
+      <p><a href="data.html">Impact of Data Science on Innovation</a>
+     
+      <p><a href="data.html">salary Packages of data scientist</a></p>
+      <p><a href="data.html">Skills of Data Scientist</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+      <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+      <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+      <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+      <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+     
+      <p><a href="da.html">What is a Data Analyst?</a></p>
+      <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+      <p><a href="da.html">Who can become a Data Analyst?</a></p>
+      <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+      <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+      </p>
+    
+      <p><a href="da.html">Data Analyst Salary Packages</a></p>
+      <p><a href="da.html">Skills Required for Data Analysts</a></p>
+      <br>
+       <!---
+      <hr>
+      <br>
+     
+      <p><a href="so.html">What Is a Software Developer?
+      </a></p>
+      <p><a href="so.html">What does a software developer do?</a></p>
+      <p><a href="so.html">Importance of Software Developers</a></p>
+      <p><a href="so.html">Differences Between Software Developer and Software Engineer
+      </a></p><br>
+      <p><a href="so.html">Roles and Responsibilities of a Software Developer
+      </a></p>
+      <p><a href="so.html">Demand for Software Developers</a></p>
+      <p><a href="so.html">Salary Packages for Software Developers</a></p>
+      <p><a href="so.html">Skills Required for Software Developers</a></p>
+      <br>
+    -->
+
+      <hr>
+      <br>
+      <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+      <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+      <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+      <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+      <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+      <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+      <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+      <br>
+      <hr>
+      <br>
+      <p><a href="test.html">What is Testing?</a></p>
+      <p><a href="test.html">Why is Testing Important?</a></p>
+      <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+      <p><a href="test.html">Salary Packages for Testers</a></p>
+      <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+      <p><a href="test.html">Skills Required for Tester</a></p>
+      
+  </aside>
+            </main>
+
+
+          <footer>
+            <p>©Copyright 2050 by nobody. All rights reversed.</p>
+          </footer>
+    </body>
+</html>

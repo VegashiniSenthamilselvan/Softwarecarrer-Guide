@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ux</title>
+    <style>
+        body, h1, h2, h3, p, ul, li, form, input {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          background-color: white;
+          color: #333333;
+          padding: 20px;
+          font-size: large;
+        }
+    
+        header {
+          background-color: #f9cfaa;
+          color: black;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+    
+        header h1 {
+          margin: 0;
+          text-align: center;
+        }
+    
+        .search-toggle {
+          position: relative;
+        }
+    
+        .search-toggle label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          border-radius: 5px;
+          margin-left: 10px;
+        }
+    
+        .search-toggle input[type="checkbox"] {
+          display: none;
+        }
+    
+        .search-form {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          background-color: #f9cfaa;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+    
+        .search-form input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        .search-form input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        .search-form input[type="submit"]:hover {
+          background-color: #f7c293;
+        }
+    
+        .search-toggle input[type="checkbox"]:checked ~ .search-form {
+          display: block;
+        }
+    
+        nav {
+          background-color: #f9cfaa;
+          padding: 10px;
+        }
+    
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+        }
+    
+        nav ul li {
+          margin: 0 15px;
+        }
+    
+        nav ul li a {
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        nav form {
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        nav input[type="search"] {
+          padding: 5px;
+          width: 200px;
+        }
+    
+        nav input[type="submit"] {
+          padding: 5px 10px;
+          background-color: #f9cfaa;
+          color: black;
+          border: none;
+          cursor: pointer;
+        }
+    
+        nav input[type="submit"]:hover {
+          background-color: #f9cfaa;
+        }
+    
+        main {
+          display: flex;
+          justify-content: center;
+        }
+    
+        article {
+          padding: 20px;
+          max-width: 990px;
+          background-color: #ffe4cd;
+          margin-top: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        aside {
+    padding: 20px;
+    width: 300px;
+    background-color: #ffe4cd;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    text-align: center; /* Center-align the heading */
+}
+
+aside hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+aside p {
+    margin-bottom: 15px;
+}
+
+aside p a {
+    display: block; /* Display links as block elements */
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 0; /* Add padding to space out links */
+    transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+/*aside p a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+/*aside li a:hover {
+    color: #ff6600; /* Change color on hover */
+*/
+
+.home-link {
+    text-decoration: none; /* Remove underline from link */
+    color: black; /* Set link color */
+}
+
+.home-icon {
+    font-size: 25px; /* Adjust icon size */
+    margin-right: 88px; /* Optional: Add spacing between icon and text */
+}
+
+        footer {
+          background-color: #f9cfaa;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          margin-top: 30px;
+        }
+        aside {
+  padding: 10px; /* Adjust padding as needed */
+  width: 300px;
+  background-color:#ffe4cd;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-left: 3px solid black; /* Vertical line */
+}
+
+aside .content {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+aside p {
+  margin: 0; /* Remove default margins */
+  padding: 4px; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+aside .content {
+  text-align: justify; /* Adjust text alignment as needed */
+}
+aside a {
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Set link color */
+}
+      </style>
+    
+    </head>
+    <body>
+        <header>
+            <center>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software Career Guide</h1>
+        </center>
+            <div class="search-toggle">
+              <input type="checkbox" id="toggleSearch">
+              <label for="toggleSearch">Search &#128269;</label>
+              <div class="search-form">
+                <form id="searchForm">
+                    <input type="search" name="q" placeholder="Search query" /><br>
+                    <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trek!" />
+                </form>
+              </div>
+            </div>
+          </header>
+          <nav>
+            <ul>
+                <div>
+                    <a href="29hw.html" class="home-link">
+                        <span class="home-icon">&#127968;</span>
+                    </a>
+                </div>
+                
+               
+                <li><a href="ux.html">UX/UI Designer</a></li>
+                <li><a href="pr.html">Product Manager</a></li>
+                <li><a href="de.html">Developer</a></li>
+                <li><a href="data.html">Data Scientist</a></li>
+                <li><a href="da.html">Data Analyst</a></li>
+                <li><a href="so.html">Software Developer</a></li>
+                <li><a href="mobile.html">Mobile App Developer</a></li>
+                <li><a href="test.html">Tester</a></li>
+            </ul>
+      
+            
+            
+          </nav>
+          <main>
+            <article>
+            <center>         
+            <h2>
+                UX/UI Designer</h2>
+            </center>   
+            <hr>
+            <br>
+            <h3>What is UX Design? Differences Between UX and UI Design
+            </h3>
+            <br>
+              <center>
+                <img src="https://usa.bootcampcdn.com/wp-content/uploads/sites/108/2021/08/tes_gen_blog_post_071921_1668379891-800x412.jpg">
+            <br>  
+            </center>
+            <br>  
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Though they fall under the same umbrella in web design, user experience (UX) and user interface (UI) are two terms that are frequently used interchangeably despite their different purposes and definitions. For aspiring designers, understanding these distinctions are key in establishing general web development knowledge, honing applicable skills, and breaking into the UX/UI design field. 
+
+                In this guide, we will discuss UX design at length, exploring the primary differences between UI and UX, and what designers do for organizations around the world. </p>
+                <br>
+                <h3>What Is UX Design?</h3>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;User experience (UX) refers to the user’s journey when interacting with a product or service. UX design is the process of creating products or services that provide meaningful experiences for users, involving many different areas of product development including branding, usability, function, and design. </p>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;One way to think of UX design is to consider the entire process or journey a user experiences when interacting with a product or service. How is the user introduced to the service or product — through advertising, blogs, or something else? What kind of interaction does the user have with the brand? How does the user feel after the interaction? All of these questions and more are key considerations within UX design. </p><br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;A UX designer’s primary goal is for each user to have a positive interaction with a product or service. Whether the interaction solves a problem, provides entertainment, or helps the user find critical information, the experience should leave the user feeling fulfilled. </p>
+                <br>
+                <h3>What Is UI Design?</h3>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;UI design, on the other hand, refers to the actual interfaces with which users engage. The UI design process may include buttons or widgets, text, images, sliders, and other interactive elements. UI designers ensure that every visual element, transition, and animation included within a product or service is setting the stage for a fluid, positive experience. </p>
+                <br>
+                <h3>Key Differences Between UX and UI Design</h3>
+                <br>
+                <center>
+                    <img src="https://usa.bootcampcdn.com/wp-content/uploads/sites/108/2021/08/Key-differences-ux-ui-design.jpg" style="height: 500px; width: 500px;">
+
+                </center>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Since UX and UI designers often work closely together, it’s common for UX and UI to be confused with one another — even though they represent different components of a product or service’s design. While there is some overlap between the two roles, there are several key differences to consider.</p>
+                <br>
+                <h3>Look vs. Feel</h3>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;UX and UI design play related, but different roles in a product’s development. UI design involves the look of a product — namely, the visual components and interactive elements that contribute to a strong user experience. Meanwhile, UX design focuses on the overarching feel of the product or service and the components that will lead to a meaningful, relevant experience for users. </p>
+                <br>
+                <h3>Design vs. Prototyping</h3>
+                <p>&nabla;&nbsp;&nbsp;&nbsp;UX and UI designers might work on the same product, but they have different duties and goals. UX designers often create wireframes and testable prototypes that form the basis of a website or service’s user flow, while UI designers finalize products and designs that drive user engagement. </p>
+                <br>
+                
+                <h3>High-Level vs. Details</h3>
+                <p>&nabla;&nbsp;&nbsp;&nbsp;Another difference between UI and UX designers is the level of detail that goes into their work. UI designers work on individual pages, buttons, and interactions; making sure they are polished and functional. UX designers take a more high-level view of a product or service, ensuring the collective user flow of a site, service, or app is fully realized and consistent.</p>
+                <br>
+                <h3>UX and UI Design Together. How Does it Work?</h3>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Though they comprise different responsibilities, UX and UI make up a site or application’s entire usability design process. In tandem, these professions are complementary contributors to a positive, intuitive user journey. A site or application’s UX elements (e.g., client-facing messaging and feel), are built on top of its UI design (e.g., technical, aesthetic structure). Each profession’s efforts inform those of its counterpart, benefiting the overall product or service and making a lasting impression on users.</p>
+                <br>
+                <h3>Why Is it Important to Know Both UX and UI?</h3>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Due to their complementary roles in web development, UI and UX design skills naturally relate to one another. By having a working knowledge of both concentrations, professionals in either discipline can contribute to a more cohesive, transparent design process that leads to a better, more usable final product. Such versatility is also beneficial for those looking to increase their hiring potential in a variety of design-based roles. </p>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Specifically, UX design skills are in high demand globally. According to the UX Design Institute, 70 percent of managers are increasing the size of their design team in 2021. A strong understanding of both UX and UI design can aid those looking to capitalize on this growing demand.</p>
+                <br>
+                <h3>UI/UX Designer roles & responsibilities include</h3>
+                <br>
+                <center>
+                    <img src="https://resources.workable.com/wp-content/uploads/2017/08/shutterstock_703336915.jpg">
+                </center>
+                <br>
+                <ol>
+                    <li><b>User Research:</b>&nbsp;Conducting user research to understand the needs, behaviors, and motivations of the target audience. This involves methods such as surveys, interviews, and usability testing.
+                    </li><br>
+                    <li><b>Wireframing and Prototyping:</b>&nbsp;Creating wireframes, which are basic layouts outlining the structure and functionality of a product. Prototyping involves developing interactive models to demonstrate user flows and interactions.</li><br>
+                    <li><b>Visual Design:</b>&nbsp;Designing the visual elements of the product, including color schemes, typography, and overall aesthetics. This phase focuses on creating a cohesive and visually appealing interface.</li><br>
+                    <li><b>Interaction Design:</b>&nbsp;Defining how users interact with the product through interfaces such as buttons, navigation components, and animations. This ensures smooth and intuitive user experiences.
+                    </li><br>
+                    <li><b>Usability Testing: </b>&nbsp;Conducting usability tests to gather feedback and identify areas for improvement. Testing involves observing how real users interact with the product and making adjustments based on their feedback.</li><br>
+                    <li><b>Collaboration:</b>&nbsp;Working closely with cross-functional teams, including developers, product managers, and marketers, to ensure design solutions align with business goals and technical requirements.</li><br>
+                    <li><b>Accessibility:</b>&nbsp;Ensuring the product is accessible to users with disabilities by adhering to accessibility standards and guidelines.</li><br>
+                    <li><b>Iterative Design: </b>&nbsp;Embracing an iterative design process where designs are refined based on user feedback and testing results. This approach allows for continuous improvement and refinement of the product.
+                    </li><br>
+                    <li><b>Stay Updated:</b>&nbsp;Keeping up with industry trends, best practices, and emerging technologies in UI/UX design to incorporate innovative and effective solutions into projects.
+                    </li><br>
+                    <li><b>Documentation:</b>&nbsp;Documenting design decisions, guidelines, and design systems to maintain consistency and facilitate collaboration across teams.</li><br>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Overall, UI/UX designers are responsible for creating engaging and user-centered experiences that meet both user needs and business objectives through a combination of research, design, and collaboration.</p>
+
+                </ol>
+                <h3>Demands of UX/UI Designer</h3>
+                <br>
+                <ol>
+                  <li><b>User-Centered Design Focus:</b>&nbsp;UX/UI designers must consistently prioritize understanding and advocating for user needs and preferences throughout the design process. This demand requires empathy, analytical thinking, and the ability to translate insights into actionable design solutions.</li><br>
+                  <li><b>Cross-Disciplinary Collaboration:</b>&nbsp;Working effectively with diverse teams is crucial. UX/UI designers often collaborate closely with product managers, developers, marketers, and other stakeholders to align design decisions with business goals, technical constraints, and marketing strategies.<br></li><br>
+                  <li><b>Iterative Design Process: </b>&nbsp;The iterative nature of design requires UX/UI designers to be adaptable and responsive to feedback. They must iterate on designs based on usability testing results, stakeholder input, and evolving project requirements.</li><br>
+                  <br>
+                  <li><b>Technical Proficiency:</b>&nbsp;Proficiency in design tools such as Sketch, Adobe XD, Figma, or similar is essential. Additionally, familiarity with front-end development technologies and principles (HTML/CSS, JavaScript) can enhance collaboration with developers and ensure feasibility of design implementations.</li><br>
+                  <br>
+                  <li><b>Communication Skills:</b>&nbsp; Clear and effective communication is vital. UX/UI designers must articulate design decisions, rationale, and insights to stakeholders with varying levels of design knowledge. They also facilitate workshops, presentations, and design critiques to gather feedback and align teams.<br></li><br>
+                </ol>
+                <h3>Salary Packages for UX/UI designers</h3>
+                <br>
+                <ol>
+                  <li><b>Entry-Level Salaries:</b>&nbsp;Typically range from $50,000 to $75,000 annually, depending on location, company size, and specific skills. Entry-level designers may have recently graduated with a degree in a related field or have up to a few years of experience.</li><br>
+                  <li><b>Mid-Level Salaries: </b>&nbsp;Generally fall between $75,000 to $100,000 per year. Mid-level designers have gained substantial experience in user research, interaction design, and prototyping. They often take on more complex projects and may begin to specialize in particular areas of UX/UI design.</li><br>
+                  <li><b>Senior-Level Salaries:</b>&nbsp;Senior UX/UI designers with extensive experience and a proven track record of delivering successful design solutions can earn upwards of $100,000 annually. Salaries for senior roles can exceed $150,000 in high-demand markets or at leading tech companies.
+                  </li><br>
+
+                  <li><b>Factors Influencing Salary:</b></li><br>
+                  <ul>
+                    <li><b>Experience:</b>&nbsp;The number of years in the field and specific achievements in previous roles.                    </li><br>
+                 
+                  <li><b>Skills and Specializations:</b>&nbsp;Expertise in areas such as interaction design, user research, or accessibility can command higher salaries.
+                  </li><br>
+                  <li><b>Location: </b>&nbsp;Salaries vary significantly based on the cost of living and demand for UX/UI designers in different regions. Major tech hubs often offer higher compensation to attract top talent.
+                  </li><br>
+                  <li><b>Industry and Company Size:</b>&nbsp;UX/UI designers in industries like tech, finance, and healthcare may receive higher salaries due to the complexity of projects and the competitive landscape.</li><br>
+                </ul>
+                <li><b>Benefits and Perks:</b>&nbsp;In addition to base salaries, UX/UI designers may receive benefits such as health insurance, retirement plans, stock options, and bonuses based on performance or company profitability. Some companies also offer perks like remote work options, professional development stipends, and wellness programs to attract and retain talent.
+                </li><br>
+                <li><b>Career Progression:</b>&nbsp;As UX/UI designers gain more experience and take on leadership roles, they may transition into roles such as UX/UI design managers, directors of user experience, or chief design officers, which often come with higher compensation packages and broader responsibilities.</li><br>
+                </ol>
+                <h3> Key Skills & Competencies of UX/UI designers</h3>
+                <br>
+                <ol>
+                  <li><b>User Research:</b>&nbsp;Conducting qualitative and quantitative research to understand user behaviors, needs, and motivations through methods like interviews, surveys, and usability testing.</li><br>
+                  <li><b>Wireframing and Prototyping:</b>&nbsp;Creating low-fidelity wireframes and high-fidelity interactive prototypes to visualize and iterate on design concepts.
+                  </li><br>
+                  <li><b>Information Architecture:</b>&nbsp; Organizing and structuring content effectively to enhance usability and findability, often through techniques like card sorting and user flow mapping.</li><br>
+                  <li><b>Interaction Design: </b>&nbsp;Designing intuitive and functional user interfaces with a focus on user interactions and behaviors, ensuring seamless navigation and usability.</li><br>
+                  <li><b>Visual Design: </b>&nbsp;Applying principles of graphic design, typography, color theory, and layout to create aesthetically pleasing and cohesive user interfaces.
+                  </li><br>
+                  <li><b>Knowledge of Front-end Development:</b>&nbsp;Understanding the basics of HTML/CSS and JavaScript to collaborate effectively with developers and implement design concepts.</li><br>
+                <li><b>Problem-Solving: </b>&nbsp;Ability to analyze complex problems and translate them into elegant solutions that balance user needs, business goals, and technological constraints.</li><br>
+                <li><b>Iterative Design Process:</b>&nbsp;Embracing an iterative design approach to continuously improve and refine designs based on user feedback, data analysis, and usability testing.
+                </li><br>
+                <li><b>Prototyping Tools:</b>&nbsp;Proficiency in tools such as Sketch, Adobe XD, Figma, or other prototyping software to create interactive designs and prototypes.
+                </li><br>
+                <li><b>Collaboration and Communication:</b>&nbsp;Working closely with cross-functional teams including product managers, developers, and marketers to align on project goals and requirements.</li><br>
+                </ol>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, UX/UI designers play a crucial role in shaping digital experiences that are intuitive, visually appealing, and user-centered. By combining skills in user research, prototyping, interaction design, and collaboration, they bridge the gap between user needs and business goals. Their expertise in creating seamless, responsive interfaces ensures that products not only meet user expectations but also enhance overall usability and satisfaction. Ultimately, UX/UI designers are pivotal in creating meaningful interactions that drive user engagement and contribute to the success of digital products and services in today's competitive landscape.
+
+
+
+                </p>
+            </article>
+
+    
+            <aside>
+            
+              <h2>Table Of Contents</h2>
+              <hr>
+              <p><a href="29hw.html">Discover Roles and Responsibilities</a></p>
+           <!--
+              <p><a href="29hw.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UX/UI Designer</a></p>
+          -->
+              <p><a href="29hw.html">Explore a Career in Software Development</a></p>
+              <p><a href="29hw.html">Demands in the Software Industry</a></p>
+              <p><a href="29hw.html">Key Skills for Success</a></p>
+              <p><a href="29hw.html">Salary Packages</a></p>
+              <p><a href="29hw.html">Career Paths</a></p>
+              <p><a href="29hw.html">Education and Training</a></p>
+              <p><a href="29hw.html">Resources for Learning</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="ux.html">&nbsp;What Is UX Design</a></p>
+              <p><a href="ux.html">What Is UI Design</a></p>
+              <p><a href="ux.html">Key Differences Between UX and UI Design</a></p>
+              <p><a href="ux.html">Look vs. Feel</a></p>
+              <p><a href="ux.html">Design vs. Prototyping</a></p>
+              <p><a href="ux.html">High-Level vs. Details</a></p>
+              <p><a href="ux.html">UX and UI Design Together. How Does it Work</a></p>
+              <p><a href="ux.html">Why Is it Important to Know Both UX and UI</a></p>
+              <p><a href="ux.html">UI/UX Designer roles & responsibilities include</a></p>
+              <p><a href="ux.html">Demands of UX/UI Designer</a></p>
+              <p><a href="ux.html">Salary Packages for UX/UI designers</a></p>
+              <p><a href="ux.html">Key Skills & Competencies of UX/UI designers</a></p>
+              <p><a href="ux.html">Conclusion Ux designer</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="pr.html">Importance of Product Managers</a></p>
+              <p><a href="pr.html">Difference from Other Roles</a></p>
+              <p><a href="pr.html">Roles and Responsibilities of product manager</a></p>
+              <p><a href="pr.html">Demands of product manager</a></p>
+              <p><a href="pr.html">Salary Packages of Product Manager</a></p>
+              <p><a href="pr.html">Skills of Graduates in the Software Field</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="de.html">Importance of Developers</a></p>
+              <p><a href="de.html">Difference of developer</a></p>
+              <p><a href="de.html">Roles and Responsibilities</a></p>
+              <p><a href="de.html">Demands of Developer</a></p>
+              <p><a href="de.html">Salary Packages of Developer</a></p>
+              <p><a href="de.html">Additional Considerations:</a></p>
+              <p><a href="de.html">Skills of Developer</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="data.html">What is data science?</a></p>
+              <p><a href="data.html">Why is data science important?</a></p>
+              <p><a href="data.html">History of data science</a></p>
+              <p><a href="data.html">Future of data science</a></p>
+              <p><a href="data.html">What does a data scientist do?</a></p>
+              <p><a href="data.html">Difference of data scientist</a></p>
+              <p><a href="data.html">Demands of Data Scientist</a></p>
+              <p><a href="data.html">Explosion of Data</a></p>
+              <p><a href="data.html">
+                Businesses Embracing Data-Driven Decision Making</a></p>
+              <p><a href="data.html">
+                Advancements in AI and Machine Learning</a></p>
+              <p><a href="data.html">
+                Emergence of Big Data Technologies</a></p>
+              <p><a href="data.html">Impact of Data Science on Innovation</a>
+             
+              <p><a href="data.html">salary Packages of data scientist</a></p>
+              <p><a href="data.html">Skills of Data Scientist</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="da.html">&nbsp;Data Collection and Cleaning</a></p>
+              <p><a href="da.html">&nbsp;Data Analysis and Interpretation</a></p>
+              <p><a href="da.html">&nbsp;Report Generation and Visualization</a></p>
+              <p><a href="da.html">&nbsp;Supporting Decision-Making</a></p>
+              <p><a href="da.html">&nbsp;Data Quality Assurance and Compliance</a></p>
+             
+              <p><a href="da.html">What is a Data Analyst?</a></p>
+              <p><a href="da.html">Why Data Analysis is a Good Career Option?</a></p>
+              <p><a href="da.html">Who can become a Data Analyst?</a></p>
+              <p><a href="da.html">Differences Between Data Scientist and Data Analyst</a></p>
+              <p><a href="da.html">Roles and Responsibilities of a Data Analyst</a>
+              </p>
+            
+              <p><a href="da.html">Data Analyst Salary Packages</a></p>
+              <p><a href="da.html">Skills Required for Data Analysts</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="so.html">What Is a Software Developer?
+              </a></p>
+              <p><a href="so.html">What does a software developer do?</a></p>
+              <p><a href="so.html">Importance of Software Developers</a></p>
+              <p><a href="so.html">Differences Between Software Developer and Software Engineer
+              </a></p><br>
+              <p><a href="so.html">Roles and Responsibilities of a Software Developer
+              </a></p>
+              <p><a href="so.html">Demand for Software Developers</a></p>
+              <p><a href="so.html">Salary Packages for Software Developers</a></p>
+              <p><a href="so.html">Skills Required for Software Developers</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="mobile.html">What Is a Mobile App Developer?</a></p>
+              <p><a href="mobile.html">What does a mobile app developer do?</a></p>
+              <p><a href="mobile.html">Importance of Mobile App Developers</a></p>
+              <p><a href="mobile.html">Differences Between Mobile App Developer and Software Developer</a></p>
+              <p><a href="mobile.html">Roles and Responsibilities of a Software Developer</a></p>
+              <p><a href="mobile.html">Salary Packages for Mobile App Developers</a></p>
+              <p><a href="mobile.html">Skills Required for Mobile App Developers</a></p>
+              <br>
+              <hr>
+              <br>
+              <p><a href="test.html">What is Testing?</a></p>
+              <p><a href="test.html">Why is Testing Important?</a></p>
+              <p><a href="test.html">Roles and Responsibilities of a Software Tester</a></p>
+              <p><a href="test.html">Salary Packages for Testers</a></p>
+              <p><a href="test.html">Comparison: Tester vs Developer</a></p>
+              <p><a href="test.html">Skills Required for Tester</a></p>
+              
+          </aside>
+    
+                </main>
+    
+    
+              <footer>
+                <p>©Copyright 2050 by nobody. All rights reversed.</p>
+              </footer>
+        </body>
+    </html>
+    
